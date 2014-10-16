@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44D250D4-8A16-442B-A813-320F0CCFF2D4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CodePractice</RootNamespace>
+    <AssemblyName>CodePractice</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Amazon\Careercup\BalancedBST.cs" />
+    <Compile Include="Amazon\Careercup\SortMatrix.cs" />
+    <Compile Include="Amazon\Careercup\SortStringArray.cs" />
+    <Compile Include="BookingDotCom\ChainingNames.cs" />
+    <Compile Include="BookingDotCom\ConvertToBinary.cs" />
+    <Compile Include="BookingDotCom\CreateHistogram.cs" />
+    <Compile Include="BookingDotCom\FindRepeatingElementsInThreeArrays.cs" />
+    <Compile Include="BookingDotCom\FindTwoRepeatingElementsInArray.cs" />
+    <Compile Include="BookingDotCom\FindUniqueItem.cs" />
+    <Compile Include="BookingDotCom\OrderCustomObjects.cs" />
+    <Compile Include="BookingDotCom\RepeatingElementsInAtleastTwoArrays.cs" />
+    <Compile Include="BookingDotCom\SymmetricDifference.cs" />
+    <Compile Include="CodeEval\Moderate\LongestLines.cs" />
+    <Compile Include="CSharp\CapturedVariables.cs" />
+    <Compile Include="CSharp\Interfaces.cs" />
+    <Compile Include="CSharp\NewThreading.cs" />
+    <Compile Include="CSharp\OldThreading.cs" />
+    <Compile Include="CSharp\OverloadResolution.cs" />
+    <Compile Include="CSharp\Structs.cs" />
+    <Compile Include="CSharp\Threading\LearnThreading.cs" />
+    <Compile Include="CSharp\Threading\UsingTasks.cs" />
+    <Compile Include="CSharp\Threading\VanillaStyle.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\DepthFirstSearch.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\Graph.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\DIjkstra.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Logic\Calculate2PowerN.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Logic\CalculateNcR.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\CountingSort.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\HeapSort.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\InsertionSort.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\PriorityQueue\MaxPQ.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\MergeSort.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\PriorityQueue\MinPQ.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\QuickSort.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\RadixSort.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindConsecutiveNumbersThatAddToN.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindDuplicateNumbers.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindMaxConsecutiveSubArray.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindSubsequenceThatAddsToGivenSum.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\PrintSubArrayWithGivenSum.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\CheckPalindrome.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindElementFromEnd.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindLoopEntry.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindLoopPresence.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindMiddleElementInSinglePass.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindPresenceOfLoops.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\JabzLinkedList.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\ReverseCompleteList.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SkipKElementsAndReverse.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\Stack\BalancedBracesChecker.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\AlgorithmicCrush.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\AlmostSortedInterval.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\BusStation.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\CavityMap.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\CorrectnessAndLoopVariant.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\CountingSort1.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\CountingSort2.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\CountingSort3.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\CountingSort4.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\CuttingBoard.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\GameOfRotation.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\InsertionSort.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\InsertionSortPart1.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\InsertionSortPart2.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\IntroTutorial.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\MakeitAnagram.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\MarkAndToys.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\QuickSort1.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\QuickSort2.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\RunTimeOfAlgorithms.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\RunTimeOfQuickSort.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\SherlockAndArray.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\SherlockAndPairs.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\SherlockAndWatson.cs" />
+    <Compile Include="HackerRank\Arrays and Sorting\TwoArrays.cs" />
+    <Compile Include="HackerRank\Contests\Week11\SherlockAndSquares.cs" />
+    <Compile Include="HackerRank\Contests\Week11\StrangeNumbers.cs" />
+    <Compile Include="HackerRank\Search\CountLuck.cs" />
+    <Compile Include="HackerRank\Search\Encryption.cs" />
+    <Compile Include="HackerRank\Search\Flowers.cs" />
+    <Compile Include="HackerRank\Search\IceCreamParlour.cs" />
+    <Compile Include="HackerRank\Search\LonelyInteger.cs" />
+    <Compile Include="HackerRank\Search\Stars.cs" />
+    <Compile Include="HackerRank\Warmup\AcmIcpcTeam.cs" />
+    <Compile Include="HackerRank\Warmup\AngryChildren.cs" />
+    <Compile Include="HackerRank\Warmup\CalvinServiceLane.cs" />
+    <Compile Include="HackerRank\Warmup\ChocolateFeast.cs" />
+    <Compile Include="HackerRank\Warmup\CombinationTree.cs" />
+    <Compile Include="HackerRank\Warmup\CutTheSticks.cs" />
+    <Compile Include="HackerRank\Warmup\FillingJars.cs" />
+    <Compile Include="HackerRank\Warmup\FindDigits.cs" />
+    <Compile Include="HackerRank\Warmup\GameOfThrones1.cs" />
+    <Compile Include="HackerRank\Warmup\GemStones.cs" />
+    <Compile Include="HackerRank\Warmup\HalloweenParty.cs" />
+    <Compile Include="HackerRank\Warmup\IsFibo.cs" />
+    <Compile Include="HackerRank\Warmup\LoveLetterMystery.cs" />
+    <Compile Include="HackerRank\Warmup\ManasaAndStones.cs" />
+    <Compile Include="HackerRank\Warmup\MaximizingXOR.cs" />
+    <Compile Include="HackerRank\Warmup\SherlocakAndSquares.cs" />
+    <Compile Include="HackerRank\Warmup\SherlockAndBeast.cs" />
+    <Compile Include="HackerRank\Warmup\SherlockAndGCD.cs" />
+    <Compile Include="HackerRank\Warmup\SherlockAndQueries.cs" />
+    <Compile Include="HackerRank\Warmup\UtopianTree.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeEval\Data\LongestLines.txt" />
+    <Content Include="HackerRank\TC\GemStones1.txt" />
+    <Content Include="HackerRank\TC\Insertion.txt" />
+    <Content Include="HackerRank\TC\ManasaAndStones1.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
