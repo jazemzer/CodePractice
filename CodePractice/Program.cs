@@ -12,7 +12,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            SwapKthNodeFromStartToEnd.Implementation();
+            CreateBalancedBSTfromSortedArray.Implementation();
             //SearchIn2DMatrix.Code();
 
             Console.Read();

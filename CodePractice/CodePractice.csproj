@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Amazon\Careercup\BalancedBST.cs" />
+    <Compile Include="Amazon\Careercup\CreateBalancedBSTfromSortedArray.cs" />
     <Compile Include="Amazon\Careercup\ReverseDoublyLinkedList.cs" />
     <Compile Include="Amazon\Careercup\SortMatrix.cs" />
     <Compile Include="Amazon\Careercup\SortStringArray.cs" />
@@ -66,6 +66,8 @@
     <Compile Include="CSharp\Threading\LearnThreading.cs" />
     <Compile Include="CSharp\Threading\UsingTasks.cs" />
     <Compile Include="CSharp\Threading\VanillaStyle.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Balanced BST\AATree.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Balanced BST\AvlTree.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\DepthFirstSearch.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\Graph.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\DIjkstra.cs" />
