@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Amazon\Careercup\BalancedBST.cs" />
+    <Compile Include="Amazon\Careercup\ReverseDoublyLinkedList.cs" />
     <Compile Include="Amazon\Careercup\SortMatrix.cs" />
     <Compile Include="Amazon\Careercup\SortStringArray.cs" />
     <Compile Include="BookingDotCom\ChainingNames.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="BookingDotCom\RepeatingElementsInAtleastTwoArrays.cs" />
     <Compile Include="BookingDotCom\SymmetricDifference.cs" />
     <Compile Include="CodeEval\Moderate\LongestLines.cs" />
+    <Compile Include="CodingInterviews\SearchIn2DMatrix.cs" />
     <Compile Include="CSharp\CapturedVariables.cs" />
     <Compile Include="CSharp\Interfaces.cs" />
     <Compile Include="CSharp\NewThreading.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\DepthFirstSearch.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\Graph.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Graph\DIjkstra.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\LinkedList\DoublyLinkedList.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Logic\Calculate2PowerN.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Logic\CalculateNcR.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\CountingSort.cs" />
@@ -78,7 +81,7 @@
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\QuickSort.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\RadixSort.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindConsecutiveNumbersThatAddToN.cs" />
-    <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindDuplicateNumbers.cs" />
+    <Compile Include="CodingInterviews\FindDuplicateNumbers.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindMaxConsecutiveSubArray.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\FindSubsequenceThatAddsToGivenSum.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Arrays\PrintSubArrayWithGivenSum.cs" />
@@ -88,9 +91,12 @@
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindLoopPresence.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindMiddleElementInSinglePass.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\FindPresenceOfLoops.cs" />
-    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\JabzLinkedList.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\LinkedList\JabzLinkedList.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\ReverseCompleteList.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\ReverseEveryKElements.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\ReverseListUsingRecursion.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SkipKElementsAndReverse.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SwapKthNodeFromStartToEnd.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Stack\BalancedBracesChecker.cs" />
     <Compile Include="HackerRank\Arrays and Sorting\AlgorithmicCrush.cs" />
     <Compile Include="HackerRank\Arrays and Sorting\AlmostSortedInterval.cs" />
