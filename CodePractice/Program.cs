@@ -12,7 +12,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            CreateBalancedBSTfromSortedArray.Implementation();
+            BinaryTreeZigZagLevelOrder.Implementation();
             //SearchIn2DMatrix.Code();
 
             Console.Read();
