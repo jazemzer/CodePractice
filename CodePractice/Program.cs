@@ -1,6 +1,7 @@
 ﻿using CodePractice.Amazon.Careercup;
 using CodePractice.CodingInterviews;
 using CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList;
+using CodePractice.GeeksForGeeks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            BinaryTreeZigZagLevelOrder.Implementation();
+            PrintLeftViewOfBinaryTree.Implementation();
             //SearchIn2DMatrix.Code();
 
             Console.Read();

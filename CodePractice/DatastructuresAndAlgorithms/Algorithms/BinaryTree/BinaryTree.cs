@@ -13,17 +13,88 @@ namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.BinaryTree
             root = null;
         }
 
+        public void PrintLeftView(Action<T> printAction)
+        {
+            int visitedLevel = 0;
+            PrintLeftView(root, 1, ref visitedLevel, printAction);
+        }
+
+        private void PrintLeftView(Node node, int level, ref int visitedLevel, Action<T> printAction)
+        {
+            if (node == null)
+                return; 
+
+            if(level > visitedLevel)
+            {
+                printAction(node.Data);
+                visitedLevel = level;
+            }
+
+            PrintLeftView(node.Left, level + 1, ref visitedLevel, printAction);
+            PrintLeftView(node.Right, level + 1, ref visitedLevel, printAction);
+        }
+
+        public void PrintRightView(Action<T> printAction)
+        {
+            int visited = 0;
+            PrintRightView(root, 1, ref visited, printAction);
+        }
+
+        private void PrintRightView(Node node, int level, ref int visitedLevel, Action<T> printAction)
+        {
+            if (node == null)
+                return;
+
+            if(level > visitedLevel)
+            {
+                printAction(node.Data);
+                visitedLevel = level;
+            }
+
+            PrintRightView(node.Right, level + 1, ref visitedLevel, printAction);
+            PrintRightView(node.Left, level + 1, ref visitedLevel, printAction);
+        }
+
+        public bool Insert(T data)
+        {
+            return Insert(ref root, data);
+        }
+
+        private bool Insert(ref Node node, T data)
+        {
+            if (node == null)
+            {
+                node = new Node(data);
+                return true;
+            }
+
+            int compare = data.CompareTo(node.Data);
+            if (compare == 0)
+            {
+                // Same key present
+                return false;
+            }
+            else if(compare < 0)
+            {
+                return Insert(ref node.Left, data);
+            }
+            else
+            {
+                return Insert(ref node.Right, data);
+            }
+        }
+
         public BinaryTree(T[] input, bool issorted = false)
         {
             if (!issorted)
             {
-                root = new Node();
-
-                Node current = root;
                 int index = 0;
 
+                root = new Node(input[index]);
+
+                Node current = root;
+
                 var queue = new Queue<Node>();
-                current.Data = input[index];
                 queue.Enqueue(current);
 
                 while(queue.Count > 0 )
@@ -31,12 +102,12 @@ namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.BinaryTree
                     current = queue.Dequeue();
                     if (index + 1 >= input.Length)
                         break;
-                    current.Left = new Node() { Data = input[++index] };
+                    current.Left = new Node(input[++index]);
                     queue.Enqueue(current.Left);
 
                     if (index + 1 >= input.Length)
                         break;
-                    current.Right = new Node() { Data = input[++index] };
+                    current.Right = new Node(input[++index]);
                     queue.Enqueue(current.Right);
 
                 }
@@ -58,8 +129,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.BinaryTree
                 return null;
 
             int middle = left + ((right - left) / 2);
-            var node = new Node();
-            node.Data = input[middle];
+            var node = new Node(input[middle]);
 
             node.Left = Populate(input, left, middle - 1);
             node.Right = Populate(input, middle + 1, right);
@@ -168,9 +238,16 @@ namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.BinaryTree
 
         internal class Node
         {
-            public T Data { get; set; }
-            public Node Left { get; set; }
-            public Node Right { get; set; }
+            internal T Data;
+            internal Node Left;
+            internal Node Right;
+
+          
+            internal Node(T data)
+            {
+                Data = data;
+                Left = Right = null;
+            }
         }
     }
 
