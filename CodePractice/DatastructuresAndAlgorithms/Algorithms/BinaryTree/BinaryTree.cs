@@ -13,6 +13,35 @@ namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.BinaryTree
             root = null;
         }
 
+        public bool IsBST()
+        {
+            Node prev = new Node(default(T));
+            return IsBSTUtil(root, ref prev);
+        }
+
+        private bool IsBSTUtil(Node node, ref Node prev)
+        {
+            if(node == null)
+            {
+                return true;
+            }
+
+            if (!IsBSTUtil(node.Left, ref prev))
+                return false;
+
+            if(node.Data.CompareTo(prev.Data) > 0)
+            {
+                prev = node;
+
+                if (!IsBSTUtil(node.Right, ref prev))
+                    return false;
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
         public void PrintLeftView(Action<T> printAction)
         {
             int visitedLevel = 0;
