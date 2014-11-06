@@ -105,6 +105,7 @@
     <Compile Include="DatastructuresAndAlgorithms\Problems\Stack\BalancedBracesChecker.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\BoundaryTraversal.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\CheckIfBinaryTreeIsBST.cs" />
+    <Compile Include="GeeksForGeeks\BinaryTree\MaxDepthofBinaryTree.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\PrintBottomViewOfBinaryTree.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\PrintLeftViewOfBinaryTree.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\PrintRightViewOfBinaryTree.cs" />
