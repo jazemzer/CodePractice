@@ -13,7 +13,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            SerializeAndDeserializeABinaryTree.Implementation();
+            SerializeAndDeserializeABST.Implementation();
             //SearchIn2DMatrix.Code();
 
             Console.Read();
