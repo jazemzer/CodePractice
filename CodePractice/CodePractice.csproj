@@ -77,6 +77,7 @@
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\LinkedList\DoublyLinkedList.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Logic\Calculate2PowerN.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Logic\CalculateNcR.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\Logic\DocumentDistance.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\CountingSort.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\HeapSort.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Sorting\InsertionSort.cs" />
@@ -103,6 +104,9 @@
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SkipKElementsAndReverse.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SwapKthNodeFromStartToEnd.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Stack\BalancedBracesChecker.cs" />
+    <Compile Include="GeeksForGeeks\BinarySearchTree\CreateBSTFromSortedDoublyLinkedList.cs" />
+    <Compile Include="GeeksForGeeks\BinarySearchTree\CreateBSTFromSortedLinkedList.cs" />
+    <Compile Include="GeeksForGeeks\BinaryTree\BinaryTreeTraversalWithoutRecursion.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\BoundaryTraversal.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\CheckIfBinaryTreeIsBST.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\MaxDepthofBinaryTree.cs" />

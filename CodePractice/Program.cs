@@ -1,7 +1,9 @@
 ﻿using CodePractice.Amazon.Careercup;
 using CodePractice.CodingInterviews;
+using CodePractice.DatastructuresAndAlgorithms.Algorithms.Logic;
 using CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList;
 using CodePractice.GeeksForGeeks;
+using CodePractice.GeeksForGeeks.BinarySearchTree;
 using CodePractice.GeeksForGeeks.BinaryTree;
 using System;
 using System.Collections.Generic;
@@ -14,7 +16,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            MaxDepthofBinaryTree.Implementation();
+            CreateBSTFromSortedDoublyLinkedList.Implementation();
             //SearchIn2DMatrix.Code();
 
             Console.Read();
