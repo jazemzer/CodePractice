@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace CSharp.Threading
 {
-    public class VanillaStyle
+    public class UsingThreads
     {
         
 

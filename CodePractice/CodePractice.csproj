@@ -58,16 +58,21 @@
     <Compile Include="BookingDotCom\RepeatingElementsInAtleastTwoArrays.cs" />
     <Compile Include="BookingDotCom\SymmetricDifference.cs" />
     <Compile Include="CodeEval\Moderate\LongestLines.cs" />
+    <Compile Include="Codility\ConvertRadix.cs" />
+    <Compile Include="Codility\Equillibrium.cs" />
+    <Compile Include="Codility\FindBiggestTriangle.cs" />
+    <Compile Include="Codility\FindCubeRoots.cs" />
     <Compile Include="CodingInterviews\SearchIn2DMatrix.cs" />
     <Compile Include="CSharp\CapturedVariables.cs" />
     <Compile Include="CSharp\Interfaces.cs" />
-    <Compile Include="CSharp\NewThreading.cs" />
+    <Compile Include="CSharp\Threading\Closures.cs" />
+    <Compile Include="CSharp\Threading\ThreadingPatterns.cs" />
     <Compile Include="CSharp\OldThreading.cs" />
     <Compile Include="CSharp\OverloadResolution.cs" />
     <Compile Include="CSharp\Structs.cs" />
     <Compile Include="CSharp\Threading\LearnThreading.cs" />
     <Compile Include="CSharp\Threading\UsingTasks.cs" />
-    <Compile Include="CSharp\Threading\VanillaStyle.cs" />
+    <Compile Include="CSharp\Threading\UsingThreads.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Balanced BST\AATree.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\Balanced BST\AvlTree.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\BinaryTree\BinaryTree.cs" />
@@ -104,6 +109,7 @@
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SkipKElementsAndReverse.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SwapKthNodeFromStartToEnd.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Stack\BalancedBracesChecker.cs" />
+    <Compile Include="DynamicProgramming\KnapSack.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\CreateBSTFromSortedDoublyLinkedList.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\CreateBSTFromSortedLinkedList.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\BinaryTreeTraversalWithoutRecursion.cs" />
@@ -117,6 +123,7 @@
     <Compile Include="GeeksForGeeks\BinaryTree\SerializeAndDeserializeABinaryTree.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\SerializeAndDeserializeABSTWithoutRecursion.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\SerializeAndDeserializeABST.cs" />
+    <Compile Include="GeeksForGeeks\BinaryTree\VerticalOrderTraversal.cs" />
     <Compile Include="HackerRank\Arrays and Sorting\AlgorithmicCrush.cs" />
     <Compile Include="HackerRank\Arrays and Sorting\AlmostSortedInterval.cs" />
     <Compile Include="HackerRank\Arrays and Sorting\BusStation.cs" />
@@ -178,6 +185,7 @@
     <Content Include="HackerRank\TC\GemStones1.txt" />
     <Content Include="HackerRank\TC\Insertion.txt" />
     <Content Include="HackerRank\TC\ManasaAndStones1.txt" />
+    <Content Include="Notes.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

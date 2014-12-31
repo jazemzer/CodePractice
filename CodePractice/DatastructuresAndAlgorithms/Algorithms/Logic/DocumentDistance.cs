@@ -3,19 +3,46 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.Logic
 {
     public class DocumentDistance
     {
+        public static string MakeGETRequest(string url)
+        {
+            var req = HttpWebRequest.Create(url);
+            req.Method = "GET";
+            string xmlResponse = string.Empty;
+            try
+            {
+                using (HttpWebResponse resp = req.GetResponse() as HttpWebResponse)
+                {
+                    Encoding enc = System.Text.Encoding.GetEncoding(1252);
+                    using (StreamReader loResponseStream = new StreamReader(resp.GetResponseStream(), enc))
+                    {
+                        xmlResponse = loResponseStream.ReadToEnd();
+                    }
+                }
+
+                return xmlResponse;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
+        }
 
         public static void Implementation()
         {
+            string resp = MakeGETRequest("http://localhost:53169/cdm/parse");
             var program = new DocumentDistance();
             //var first = program.GetWords("108211458 Ascorbic Acid 500mg/5ml Syrup");
-            var first = @" Albuterol Hfa Inhalation Or    ";
-            var second = @"Albuterol Sulfate HFA";
+            var first = @"Acetaminophen 1605";
+            var second = @"Acetaminophen Elixir 160 MG/5ML";
 
             var firstFrequencies = program.ComputeFrequency(first);
             var secondFrequencies = program.ComputeFrequency(second);
@@ -24,7 +51,6 @@ namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.Logic
 
             Console.WriteLine("The distance is: {0}", distance);
 
-            SqlDouble trial = distance;
         }
 
         public string[] GetWords(string input)
@@ -60,7 +86,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Algorithms.Logic
 
             if (denominator == 0.0)
                 return -1;
-            return Math.Acos(numerator / denominator);
+            return (numerator / denominator);
         }
 
         public int ComputeInnerProduct(Dictionary<string, int> first, Dictionary<string, int> second)

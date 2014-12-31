@@ -8,32 +8,29 @@ namespace Logic
 {
     public class CalculateNcR
     {
-        public static void Code()
+        public static void Implementation()
         {
             var input = new int[] {1, 2, 3, 4, 5};
             int n = input.Length;
-            int r = 3;
-            var output = new int[3];
+            int r = 2;
+            var output = new int[r];
             Recursive(input, 0, 0, n, r, output);
             Console.ReadLine();
         }
 
         private static void Recursive(int[] input, int level, int index, int n, int r, int[] output)
         {
-            if (index == n)
+            if (level == r)
             {
-                if (level == r)
+                for (int i = 0; i < level; i++)
                 {
-                    for (int i = 0; i < level; i++)
-                    {
-                        Console.Write(output[i]);
-                    }
-                    Console.WriteLine();
+                    Console.Write(output[i]);
                 }
+                Console.WriteLine();
                 return;
             }
 
-            if (level == r)
+            if (index >= n)
             {
                 return;
             }

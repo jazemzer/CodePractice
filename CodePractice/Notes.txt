@@ -1,0 +1,14 @@
+﻿
+Binary Tree 
+
+1) Serialize and deserialize BST
+2) We are given a binary tree and we have to print the tree level wise from bottom right to the root.
+3) Depth of BST
+4) InOrder traversal without recursion
+5) Create BST from sorted Array (easy) , sorted Linked List (hard) , DLL (very hard)
+6) You have a BST and int value(take it to be variable val). 
+You need to print our all possible paths in the BST which sum to val, they may or may not start at the root.
+7) Find LCA
+8) Find heigt
+9) Is given binary tree A complete binary tree
+10) find successor / predecessor
