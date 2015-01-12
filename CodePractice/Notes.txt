@@ -12,3 +12,22 @@ You need to print our all possible paths in the BST which sum to val, they may o
 8) Find heigt
 9) Is given binary tree A complete binary tree
 10) find successor / predecessor
+
+
+Use Checked { } block if you want to capture overflow exceptions
+To convert characters to integers subtract them from their starting character. for example, to convert '5' to 5 . Subtract '0' from '5' 
+
+
+String Manipulation
+* Approach the problem from backwards 
+* use character pointers to manipulate string inplace
+	unsafe
+	{
+		// Must pin object on heap so that it doesn't gets relocated by garbage collector 
+		fixed (char* start = "Sample String")
+		{
+			// Create another pointer allow incrementation 
+			char* left = start;
+			...
+		}
+	}

@@ -8,12 +8,12 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
 {
     public class JabzLinkedList<T>
     {
-        public JabzLLNode<T> Root { get; set; }
+        public JabzLLNode<T> Head { get; set; }
         public JabzLLNode<T> Last
         {
             get
             {
-                var current = Root;
+                var current = Head;
                 if (current == null)
                 {
                     return null;
@@ -26,13 +26,25 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             }
         }
 
+        public void Print()
+        {
+            var temp = Head;
+            while (temp != null)
+            {
+                Console.Write(temp.Value);
+                Console.Write(" --> ");
+                temp = temp.Next;
+            }
+            Console.WriteLine();
+        }
+
         public JabzLLNode<T> Add(T data)
         {
             JabzLLNode<T> newNode = new JabzLLNode<T>();
             newNode.Value = data;
 
-            if (Root == null)
-                Root = newNode;
+            if (Head == null)
+                Head = newNode;
             else
                 Last.Next = newNode;
             return newNode;
@@ -40,14 +52,14 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
 
         public void Delete(JabzLLNode<T> node)
         {
-            if (Root == node)
+            if (Head == node)
             {
-                Root = node.Next;
+                Head = node.Next;
                 node.Next = null;
             }
             else
             {
-                JabzLLNode<T> current = Root;
+                JabzLLNode<T> current = Head;
                 while (current != null)
                 {
                     if (current.Next == node)

@@ -20,7 +20,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
                 findMiddle.Add(i);
             }
 
-            var result = FindMiddleElement(findMiddle.Root);
+            var result = FindMiddleElement(findMiddle.Head);
 
             Console.WriteLine(result.Value);
 

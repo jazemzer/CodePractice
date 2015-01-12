@@ -21,7 +21,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
                 skipReverse.Add(i);
             }
 
-            var hasloop = HasLoops(skipReverse.Root);
+            var hasloop = HasLoops(skipReverse.Head);
             Console.WriteLine(hasloop);
 
             JabzLinkedList<int> loopInput = new JabzLinkedList<int>();
@@ -43,7 +43,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             lastAddedNode.Next = loopStart;
 
 
-            hasloop = HasLoops(loopInput.Root);
+            hasloop = HasLoops(loopInput.Head);
             Console.WriteLine(hasloop);
 
             #endregion

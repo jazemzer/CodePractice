@@ -18,10 +18,10 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             }
 
 
-            reverseAll.Root = ReverseK(reverseAll.Root);
+            reverseAll.Head = ReverseK(reverseAll.Head);
 
             //Printing output
-            for (JabzLLNode<int> item = reverseAll.Root; item != null; item = item.Next)
+            for (JabzLLNode<int> item = reverseAll.Head; item != null; item = item.Next)
             {
                 Console.Write(item.Value + " -> ");
             }

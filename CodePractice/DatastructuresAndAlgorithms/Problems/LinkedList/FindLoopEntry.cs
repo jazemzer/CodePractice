@@ -36,7 +36,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             lastAddedNode.Next = loopStart;
 
             Console.WriteLine(pick);
-            var result = FindLoopEntryNode(loopInput.Root);
+            var result = FindLoopEntryNode(loopInput.Head);
             Console.WriteLine(result.Value);
             #endregion
 

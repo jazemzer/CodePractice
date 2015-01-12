@@ -17,10 +17,10 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
                 reverseAll.Add(i);
             }
 
-            ReverseUsingRecursion(reverseAll.Root, reverseAll);
+            ReverseUsingRecursion(reverseAll.Head, reverseAll);
 
             //Printing output
-            for (JabzLLNode<int> item = reverseAll.Root; item != null; item = item.Next)
+            for (JabzLLNode<int> item = reverseAll.Head; item != null; item = item.Next)
             {
                 Console.Write(item.Value + " -> ");
             }
@@ -36,7 +36,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             }
             else
             {
-                list.Root = node;
+                list.Head = node;
             }
             return node;
         }

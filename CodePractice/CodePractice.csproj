@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,17 @@
     <Compile Include="Amazon\Careercup\ReverseDoublyLinkedList.cs" />
     <Compile Include="Amazon\Careercup\SortMatrix.cs" />
     <Compile Include="Amazon\Careercup\SortStringArray.cs" />
+    <Compile Include="BitManipulation\ClosestNeighbourByWeight.cs" />
+    <Compile Include="BitManipulation\CheckIntegerIs2PowerX.cs" />
+    <Compile Include="BitManipulation\FindAbsoluteValue.cs" />
+    <Compile Include="BitManipulation\FindBinaryPalindrome.cs" />
+    <Compile Include="BitManipulation\MultiplyXandY.cs" />
+    <Compile Include="BitManipulation\NumberAppearingOnce.cs" />
+    <Compile Include="BitManipulation\SwapOddAndEvenBits.cs" />
+    <Compile Include="BitManipulation\SwapBitPositions.cs" />
+    <Compile Include="BitManipulation\ReverseBits.cs" />
+    <Compile Include="BitManipulation\SwapWithoutATempVariable.cs" />
+    <Compile Include="BitManipulation\WithoutConditionalStatements.cs" />
     <Compile Include="BookingDotCom\ChainingNames.cs" />
     <Compile Include="BookingDotCom\ConvertToBinary.cs" />
     <Compile Include="BookingDotCom\CreateHistogram.cs" />
@@ -65,6 +77,7 @@
     <Compile Include="CodingInterviews\SearchIn2DMatrix.cs" />
     <Compile Include="CSharp\CapturedVariables.cs" />
     <Compile Include="CSharp\Interfaces.cs" />
+    <Compile Include="CSharp\LeftOuterJoinLinq.cs" />
     <Compile Include="CSharp\Threading\Closures.cs" />
     <Compile Include="CSharp\Threading\ThreadingPatterns.cs" />
     <Compile Include="CSharp\OldThreading.cs" />
@@ -109,7 +122,11 @@
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SkipKElementsAndReverse.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SwapKthNodeFromStartToEnd.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Stack\BalancedBracesChecker.cs" />
+    <Compile Include="Design\FlightBooking\FlightClient.cs" />
+    <Compile Include="Design\FlightBooking\FlightBuilder.cs" />
+    <Compile Include="Design\FlightBooking\FlightFilter.cs" />
     <Compile Include="DynamicProgramming\KnapSack.cs" />
+    <Compile Include="BitManipulation\ComputeParity.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\CreateBSTFromSortedDoublyLinkedList.cs" />
     <Compile Include="GeeksForGeeks\BinarySearchTree\CreateBSTFromSortedLinkedList.cs" />
     <Compile Include="GeeksForGeeks\BinaryTree\BinaryTreeTraversalWithoutRecursion.cs" />
@@ -177,8 +194,17 @@
     <Compile Include="HackerRank\Warmup\SherlockAndGCD.cs" />
     <Compile Include="HackerRank\Warmup\SherlockAndQueries.cs" />
     <Compile Include="HackerRank\Warmup\UtopianTree.cs" />
+    <Compile Include="LinkedList\AddingTwoLists.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringManipulation\CheckPalindrome.cs" />
+    <Compile Include="StringManipulation\EncodeAString.cs" />
+    <Compile Include="StringManipulation\InterConversion.cs" />
+    <Compile Include="StringManipulation\PatternMatching.cs" />
+    <Compile Include="StringManipulation\RemoveDuplicateCharacters.cs" />
+    <Compile Include="StringManipulation\ReplaceAndRemove.cs" />
+    <Compile Include="StringManipulation\ReverseWordsInSentence.cs" />
+    <Compile Include="StringManipulation\_RemovePatterns.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeEval\Data\LongestLines.txt" />

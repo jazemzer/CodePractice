@@ -28,7 +28,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
                     palindromeList.Add(s);
                 }
 
-                bool isPalindrome = CheckPalindromeList(palindromeList.Root);
+                bool isPalindrome = CheckPalindromeList(palindromeList.Head);
 
                 Console.WriteLine(string.Format("{0} : {1}", palindrome, isPalindrome));
             }

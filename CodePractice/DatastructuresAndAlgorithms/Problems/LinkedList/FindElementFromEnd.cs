@@ -23,7 +23,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
                 findElementFromEnd.Add(i);
             }
 
-            var result = FindKthNodeFromEnd(findElementFromEnd.Root, 2);
+            var result = FindKthNodeFromEnd(findElementFromEnd.Head, 2);
 
             Console.WriteLine(result.Value);
 

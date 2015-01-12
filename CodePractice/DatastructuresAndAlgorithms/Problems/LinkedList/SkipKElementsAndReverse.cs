@@ -25,10 +25,10 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
 
             //SkipAndReverse(skipReverse.Root, 3);
             //SkipAndReverse2(skipReverse.Root, 3);
-            SkipAndReverseRecursive(skipReverse.Root, 3, true);
+            SkipAndReverseRecursive(skipReverse.Head, 3, true);
 
             //Printing output
-            for (JabzLLNode<int> item = skipReverse.Root; item != null; item = item.Next)
+            for (JabzLLNode<int> item = skipReverse.Head; item != null; item = item.Next)
             {
                 Console.Write(item.Value + " -> ");
             }

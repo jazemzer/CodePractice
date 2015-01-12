@@ -19,7 +19,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             SwapNodes(myList, 5);
 
             //Printing output
-            for (JabzLLNode<int> item = myList.Root; item != null; item = item.Next)
+            for (JabzLLNode<int> item = myList.Head; item != null; item = item.Next)
             {
                 Console.Write(item.Value + " -> ");
             }
@@ -27,11 +27,11 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
 
         private static void SwapNodes(JabzLinkedList<int> list, int k)
         {
-            if (list.Root == null)
+            if (list.Head == null)
                 return;
 
-            var P1 = list.Root;
-            var P2 = list.Root;
+            var P1 = list.Head;
+            var P2 = list.Head;
             JabzLLNode<int> startPrev = null;
             JabzLLNode<int> start = null;
             JabzLLNode<int> endPrev = null;
@@ -71,7 +71,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
 
             if(k == 1)
             {
-                list.Root = P2;
+                list.Head = P2;
             }
             
         }

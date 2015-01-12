@@ -33,7 +33,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             lastAddedNode.Next = loopStart;
 
 
-            var hasloop = HasLoops(loopInput.Root);
+            var hasloop = HasLoops(loopInput.Head);
             Console.WriteLine(hasloop);
 
             #endregion

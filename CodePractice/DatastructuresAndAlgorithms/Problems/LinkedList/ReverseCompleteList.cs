@@ -22,7 +22,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
             ReverseList(reverseAll);
 
             //Printing output
-            for (JabzLLNode<int> item = reverseAll.Root; item != null; item = item.Next)
+            for (JabzLLNode<int> item = reverseAll.Head; item != null; item = item.Next)
             {
                 Console.Write(item.Value + " -> ");
             }
@@ -34,8 +34,8 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
         public static void ReverseList(JabzLinkedList<int> listToReverse)
         {
             JabzLLNode<int> prev2Prev = null;
-            var prev = listToReverse.Root;
-            var current = listToReverse.Root.Next;
+            var prev = listToReverse.Head;
+            var current = listToReverse.Head.Next;
             while (current != null)
             {
                 prev.Next = prev2Prev;
@@ -44,7 +44,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList
                 current = current.Next;
             }
             prev.Next = prev2Prev;
-            listToReverse.Root = prev;
+            listToReverse.Head = prev;
         }
     }
 }
