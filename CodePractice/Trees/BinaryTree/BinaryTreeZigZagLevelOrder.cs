@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CodePractice.Amazon.Careercup
+namespace CodePractice.BinaryTree.Traversal
 {
     //Print a binary tree in zig zag way... that is: 
     //......a......... 

@@ -12,7 +12,7 @@ namespace CodePractice.CodeEval.Moderate
         private T[] pq;
 
         private int N = 0;
-        private int _size = 0;
+        private int _capacity = 0;
         private MinPQ()
         {
 
@@ -20,17 +20,21 @@ namespace CodePractice.CodeEval.Moderate
         public MinPQ(int capacity)
         {
             pq = new T[capacity + 1]; //As Zeroth index is unused
-            _size = pq.Length - 1; //As Zeroth index is unused
+            _capacity = pq.Length - 1; //As Zeroth index is unused
         }
 
         private void Swim(int start)
         {
             while (start > 1)
             {
+                //Compare child with parent 
                 if (pq[start].CompareTo(pq[start / 2]) < 0)
                 {
+                    //if Child < Parent, swap positions
                     Swap(start, start / 2);
                 }
+
+                //Move to the parent
                 start = start / 2;
             }
         }
@@ -45,7 +49,7 @@ namespace CodePractice.CodeEval.Moderate
 
         public void Insert(T item)
         {
-            if (N < _size)
+            if (N < _capacity)
             {
                 pq[++N] = item;
                 Swim(N);
@@ -70,9 +74,14 @@ namespace CodePractice.CodeEval.Moderate
 
         private void Sink(int start)
         {
+            //Take the first child
             var child = start * 2;
+
+            //Verify if we're within the limits
             while (child <= N)
             {
+                //check if sibling is also within limit 
+                //compare siblings
                 if (child + 1 <= N
                     && pq[child + 1].CompareTo(pq[child]) < 0)
                 {
@@ -228,7 +237,7 @@ namespace CodePractice.CodeEval.Moderate
         {
             
             int N = 0;
-            MaxPQ<Liner> input; 
+            MaxPQ<Liner> queue; 
             using (StreamReader reader = File.OpenText(@"D:\Learning\JabsStudyGroup\CodeEval\Data\LongestLines.txt"))
             {
                 if (!reader.EndOfStream)
@@ -236,7 +245,7 @@ namespace CodePractice.CodeEval.Moderate
                     N = Convert.ToInt32(reader.ReadLine());
                 }
 
-                input = new MaxPQ<Liner>(N);
+                queue = new MaxPQ<Liner>(N);
                 var counter = -1; 
                 while (!reader.EndOfStream)
                 {
@@ -244,11 +253,11 @@ namespace CodePractice.CodeEval.Moderate
                     if (string.IsNullOrWhiteSpace(line))
                         continue;
                     
-                   input.Insert(new Liner(){ Context = line.Trim()});
+                   queue.Insert(new Liner(){ Context = line.Trim()});
                 }
             }
 
-            input.Sort();
+            queue.Sort();
 
             for (int i = N; i > 0; i++)
             {

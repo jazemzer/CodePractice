@@ -76,6 +76,7 @@
     <Compile Include="Codility\FindCubeRoots.cs" />
     <Compile Include="CodingInterviews\SearchIn2DMatrix.cs" />
     <Compile Include="CSharp\CapturedVariables.cs" />
+    <Compile Include="CSharp\DeepVsShallowCopy.cs" />
     <Compile Include="CSharp\Interfaces.cs" />
     <Compile Include="CSharp\LeftOuterJoinLinq.cs" />
     <Compile Include="CSharp\Threading\Closures.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SkipKElementsAndReverse.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\LinkedList\SwapKthNodeFromStartToEnd.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Problems\Stack\BalancedBracesChecker.cs" />
+    <Compile Include="DesignPatterns\ObserverDP.cs" />
     <Compile Include="Design\FlightBooking\FlightClient.cs" />
     <Compile Include="Design\FlightBooking\FlightBuilder.cs" />
     <Compile Include="Design\FlightBooking\FlightFilter.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="StringManipulation\EncodeAString.cs" />
     <Compile Include="StringManipulation\InterConversion.cs" />
     <Compile Include="StringManipulation\PatternMatching.cs" />
+    <Compile Include="StringManipulation\PhoneMnemonics.cs" />
     <Compile Include="StringManipulation\RemoveDuplicateCharacters.cs" />
     <Compile Include="StringManipulation\ReplaceAndRemove.cs" />
     <Compile Include="StringManipulation\ReverseWordsInSentence.cs" />

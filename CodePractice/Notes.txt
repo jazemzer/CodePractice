@@ -31,3 +31,47 @@ String Manipulation
 			...
 		}
 	}
+
+
+Programming Interview Preparation – Week 1
+
+Start your Week 1 with going through your favorite Data Structures and Algorithms book. Then move on to practice following questions.
+
+Implement binary search on a sorted array.
+Rotate an array by integer N.
+Find smallest common number in three sorted arrays.
+Remove duplicate characters from a string.
+Reverse order of words in a sentence.
+Reverse a singly linked list.
+Merge two sorted linked lists.
+Implement iterative in-order traversal of a binary tree.
+Validate if two binary trees are identical.
+Print perimeter of a binary tree.
+Implement stack using queues.Find square root of a real number.
+Programming Interview Preparation – Week 2
+
+Practice more problems during Week 2.
+
+Implement integer division without using division or multiplication operators.
+Find all palindromic substrings in a given string.
+Find an element in a rotated array that was originally sorted.
+Find sub-array with largest sum in an integer array.
+Reverse even nodes in a linked list i.e. a->b->c->d->e becomes a->d->c->b->e.
+Implement deep copy of a singly linked list where node’s structure has an additional arbitrary pointer(pointing to any node in the linked list).
+Find nth highest number in a binary search tree.
+Implement level order traversal of a binary tree.
+Implement clone(deep copy) of a graph.
+Programming Interview Preparation – Week 3
+
+Practice even more problems during Wee 3.
+
+Find all permutations of a given string.
+Find all possible combinations of a given string.
+Find number of ways to make change of given amount using coins of given denominations (coin changing problem).
+Find number of ways to make a given score in a game (like baseball) where a player can score 1, 2, or 4 runs).
+Sort two arrays of ‘n’ nuts and ‘n’ bolts. Nuts can be compared with bolts and vice versa. A nut can’t be compared with another nut and a bolt can’t be compared with another bolt.
+Implement serialization and de-serialization of a binary tree.
+Determine if a string can be segmented into valid dictionary words.
+Implement regular expression matching.
+Implement boggle game.
+Implement LRU cache.

@@ -2,10 +2,12 @@
 using CodePractice.BitManipulation;
 using CodePractice.Codility;
 using CodePractice.CodingInterviews;
+using CodePractice.CSharp;
 using CodePractice.CSharp.Threading;
 using CodePractice.DatastructuresAndAlgorithms.Algorithms.Logic;
 using CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList;
 using CodePractice.Design.FlightBooking;
+using CodePractice.DesignPatterns;
 using CodePractice.GeeksForGeeks;
 using CodePractice.GeeksForGeeks.BinarySearchTree;
 using CodePractice.GeeksForGeeks.BinaryTree;
@@ -20,14 +22,14 @@ using System.Text;
 
 namespace CodePractice
 {
-    
+   
     class Program
     {
         static void Main(string[] args)
         {
+            ObserverDP.Implementation();
 
-
-            CodePractice.StringManipulation.ReverseWordsInSentence.Implementation();
+            //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
 
             //Yet to solve - http://basicalgos.blogspot.in/2012/06/58-linked-list-related-questions.html
 
