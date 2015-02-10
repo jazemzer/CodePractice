@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodePractice.Amazon.Careercup
+namespace CodePractice.Matrix
 {
     public class SortMatrix
     {
@@ -13,7 +13,7 @@ namespace CodePractice.Amazon.Careercup
 
             int dem = (int) Math.Ceiling(Math.Sqrt(arr.Length));
             int[,] res = new int[dem ,dem];
-
+            
             Array.Sort(arr);
             int p = 0;
             for (int row = 0; row < dem; ++row)

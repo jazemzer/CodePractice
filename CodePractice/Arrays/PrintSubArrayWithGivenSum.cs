@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CodePractice.DatastructuresAndAlgorithms.Problems.Arrays
+namespace CodePractice.Arrays
 {
     class PrintSubArrayWithGivenSum
     {
+
+        public static void Implementation()
+        {
+            var input = new int[] { 1, 2, -1, 4, 3, -5, 2, 4 };
+            Code(input, 3);
+        }
+                
         private static void Code(int[] a, int k)
         {
             // represents <sum fromstart uptpthat index, index> 

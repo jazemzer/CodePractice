@@ -1,4 +1,5 @@
 ﻿using CodePractice.Amazon.Careercup;
+using CodePractice.Arrays;
 using CodePractice.BitManipulation;
 using CodePractice.Codility;
 using CodePractice.CodingInterviews;
@@ -27,7 +28,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            ObserverDP.Implementation();
+            PrintSubArrayWithGivenSum.Implementation();
 
             //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
 
