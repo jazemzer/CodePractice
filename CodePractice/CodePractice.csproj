@@ -43,7 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arrays\_FindIndexOf_SmallestNumber_GreaterThanOrEqual_To_K.cs" />
     <Compile Include="Arrays\_FindSubArrayWithGivenSum.cs" />
+    <Compile Include="Design\SkyCast\BinarySearchHelper.cs" />
+    <Compile Include="Design\SkyCast\UpDownCostCalculator.cs" />
+    <Compile Include="Design\SkyCast\Contracts\IUpDownCostCalculator.cs" />
+    <Compile Include="Design\SkyCast\Contracts\IBinarySearchHelper.cs" />
+    <Compile Include="Design\SkyCast\MasterBrain.cs" />
+    <Compile Include="Design\Tautology\ExpressionConvertor.cs" />
+    <Compile Include="Design\Tautology\Contracts\IExpressionConvertor.cs" />
+    <Compile Include="Design\Tautology\ExpressionEvaluator.cs" />
+    <Compile Include="Design\Tautology\Contracts\IExpressionEvaluator.cs" />
+    <Compile Include="Design\Tautology\Contracts\IPropositionalEngine.cs" />
+    <Compile Include="Design\Tautology\PropositionalEngine.cs" />
     <Compile Include="Trees\BinaryTree\BinaryTreeZigZagLevelOrder.cs" />
     <Compile Include="Trees\BalancedBST\CreateBalancedBSTfromSortedArray.cs" />
     <Compile Include="Trees\BinaryTree\CreateBinaryTreeFromSortedArray.cs" />

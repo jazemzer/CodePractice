@@ -8,6 +8,7 @@ using CodePractice.CSharp.Threading;
 using CodePractice.DatastructuresAndAlgorithms.Algorithms.Logic;
 using CodePractice.DatastructuresAndAlgorithms.Problems.LinkedList;
 using CodePractice.Design.FlightBooking;
+using CodePractice.Design.Tautology;
 using CodePractice.DesignPatterns;
 using CodePractice.GeeksForGeeks;
 using CodePractice.GeeksForGeeks.BinarySearchTree;
@@ -23,12 +24,12 @@ using System.Text;
 
 namespace CodePractice
 {
-   
+    
     class Program
     {
         static void Main(string[] args)
-        {
-            PrintSubArrayWithGivenSum.Implementation();
+        {            
+            //PrintSubArrayWithGivenSum.Implementation();
 
             //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
 
