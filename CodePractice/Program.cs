@@ -16,6 +16,7 @@ using CodePractice.GeeksForGeeks.BinaryTree;
 using CodePractice.LinkedList;
 using CodePractice.StringManipulation;
 using CSharp.Threading;
+using DSArrays;
 using Logic;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {            
-            //PrintSubArrayWithGivenSum.Implementation();
+            Dijkstra.Implementation();
 
             //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
 

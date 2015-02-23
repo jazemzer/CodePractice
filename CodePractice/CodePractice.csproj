@@ -224,12 +224,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeEval\Data\LongestLines.txt" />
+    <Content Include="Design\Tautology\ReadMe.txt" />
     <Content Include="HackerRank\TC\GemStones1.txt" />
     <Content Include="HackerRank\TC\Insertion.txt" />
     <Content Include="HackerRank\TC\ManasaAndStones1.txt" />
     <Content Include="Notes.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Design\SkyCast\Skycast_Coding Challenge.pdf" />
+    <None Include="Design\Tautology\Tautologyverifier.pdf" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -10,95 +10,106 @@ namespace DSArrays
      * with non negative edge weights. For example, if the vertices (nodes) of the graph represent cities
      * and edge weights represent driving distances between pairs of cities connected by a direct road,
      * Dijkstra's algorithm can be used to find the shortest route between two cities. Also, this algorithm 
-     * can be used for shortest path to destination in traffic network.
-     * Pseudocode
-    function Dijkstra(L[1..n, 1..n]) : array [2..n]
-    array D[2..n]
-    set C 
-    C <- {2, 3, 4, 5, 6, …, n}
-    for i <- 2 to n
-        D[i] <- L[1,i]
-    repeat n - 2 times
-        v <- C  // minimum D[v] extract to C
-        v <- C - {v} 
-        for each w in C do
-            D[w] <- min(D[w], D[v] + L[v,w])
-    return D
+     * can be used for shortest path to destination in traffic network.    
      */
     class Dijkstra
     {
-        private int rank = 0;
-        private int[,] L;
-        private int[] C;
-        public int[] D;
-        private int trank = 0;
-        public Dijkstra(int paramRank, int[,] paramArray)
+        private int noOfNodes = 0;
+        private int[,] AdjacencyMatrix;
+        private bool[] IsVisited;
+        public int[] NodeCost;
+        public int[] PreviousNode;
+
+        public Dijkstra(int[,] adjacencyMatrix)
         {
-            L = new int[paramRank, paramRank];
-            C = new int[paramRank];
-            D = new int[paramRank];
-            rank = paramRank;
-            for (int i = 0; i < rank; i++)
+            this.AdjacencyMatrix = adjacencyMatrix;
+            noOfNodes =  (int)Math.Sqrt(adjacencyMatrix.Length);
+
+            IsVisited = new bool[noOfNodes];
+            NodeCost = new int[noOfNodes];
+            PreviousNode = new int[noOfNodes];
+
+            //Fill IsVisited and PreviousNode array with default values
+            for (int i = 0; i < noOfNodes; i++)
             {
-                for (int j = 0; j < rank; j++)
-                {
-                    L[i, j] = paramArray[i, j];
-                }
+                IsVisited[i] = false;
+                PreviousNode[i] = -1;
             }
 
-            for (int i = 0; i < rank; i++)
-            {
-                C[i] = i;
-            }
-            C[0] = -1;
-            for (int i = 1; i < rank; i++)
-                D[i] = L[0, i];
+          
         }
+
         public void DijkstraSolving()
         {
+
+            #region Finding the vertex with minimum Cost
             int minValue = Int32.MaxValue;
             int minNode = 0;
-            for (int i = 0; i < rank; i++)
+
+            for (int i = 0; i < noOfNodes; i++)
             {
-                if (C[i] == -1)
+                if (IsVisited[i])
                     continue;
-                if (D[i] > 0 && D[i] < minValue)
+                if (NodeCost[i] > 0 
+                    && NodeCost[i] < minValue)
                 {
-                    minValue = D[i];
+                    minValue = NodeCost[i];
                     minNode = i;
                 }
             }
-            C[minNode] = -1;
-            for (int i = 0; i < rank; i++)
+            IsVisited[minNode] = true;
+
+            #endregion
+
+            
+            for (int i = 0; i < noOfNodes; i++)
             {
-                if (L[minNode, i] < 0)
+                //Ignore unreachable nodes from the current minimum
+                if (IsVisited[i] || AdjacencyMatrix[minNode, i] < 0)
                     continue;
-                if (D[i] < 0)
+
+                //If the node cost is not updated yet, add it to the previous minium
+                if (NodeCost[i] < 0)
                 {
-                    D[i] = minValue + L[minNode, i];
+                    PreviousNode[i] = minNode;
+                    NodeCost[i] = minValue + AdjacencyMatrix[minNode, i];
                     continue;
                 }
-                if ((D[minNode] + L[minNode, i]) < D[i])
-                    D[i] = minValue + L[minNode, i];
+
+                //Update node cost if the new value is less than the previous one
+                if ((minValue + AdjacencyMatrix[minNode, i]) < NodeCost[i])
+                {
+                    PreviousNode[i] = minNode;
+                    NodeCost[i] = minValue + AdjacencyMatrix[minNode, i];
+                }
             }
         }
-        public void Run()
+
+        public void Run(int startNode)
         {
-            for (trank = 1; trank < rank; trank++)
+            //Assuming we're gonna start from 0th element as source
+            IsVisited[startNode] = true;
+
+            //Because 0th element is source, populate cost values from 0th row in matrix
+            for (int i = 0; i < noOfNodes; i++)
+            {
+                NodeCost[i] = AdjacencyMatrix[startNode, i];
+
+                //Setting previous node
+                if (NodeCost[i] != -1)
+                {
+                    PreviousNode[i] = startNode; //start node
+                }
+            }
+
+            for (var i = 1; i < noOfNodes; i++)
             {
                 DijkstraSolving();
-                Console.WriteLine("iteration" + trank);
-                for (int i = 0; i < rank; i++)
-                    Console.Write(D[i] + " ");
-                Console.WriteLine("");
-                for (int i = 0; i < rank; i++)
-                    Console.Write(C[i] + " ");
-                Console.WriteLine("");
             }
         }
         public static void Implementation()
         {
-            int[,] L ={                  
+            int[,] input ={                  
                 {-1,  5, -1, -1, -1,  3, -1, -1}, 
                 { 5, -1,  2, -1, -1, -1,  3, -1}, 
                 {-1,  2, -1,  6, -1, -1, -1, 10}, 
@@ -108,14 +119,19 @@ namespace DSArrays
                 {-1,  3, -1, -1, -1,  7, -1,  2}, 
                 {-1, -1, 10, -1,  5, -1,  2, -1} 
             };
-            Dijkstra clss = new Dijkstra((int)Math.Sqrt(L.Length), L);
-            clss.Run();
+            Dijkstra algo = new Dijkstra( input);
+            algo.Run(4);
             Console.WriteLine("Solution is");
-            foreach (int i in clss.D)
+            foreach (int i in algo.NodeCost)
             {
                 Console.WriteLine(i);
             }
-            Console.WriteLine("*****************");            
+            Console.WriteLine("*****************");
+            foreach (int i in algo.PreviousNode)
+            {
+                Console.WriteLine(i);
+            }
+            Console.Read();
         }
     }
 }
