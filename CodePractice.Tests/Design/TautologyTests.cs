@@ -97,9 +97,9 @@ namespace CodePractice.Tests.Design
         }
 
         [TestMethod]
-        public void Test_Tautology()
+        public void Test_Tautology_BruteForce()
         {
-            var verifier = new PropositionalEngine();
+            var verifier = new BruteForcePropositionalEngine();
             bool result;
 
             result = verifier.CheckTautology("!a&b");
@@ -132,6 +132,54 @@ namespace CodePractice.Tests.Design
             Assert.AreEqual(result, true);
 
             result = verifier.CheckTautology("(!a | a)");
+            Assert.AreEqual(result, true);
+
+
+        }
+
+        [TestMethod]
+        public void Test_Tautology_Optimized()
+        {
+            var verifier = new OptimizedPropositionalEngine();
+            bool result;
+
+            result = verifier.CheckTautology("!a&b");
+            Assert.AreEqual(result, false);
+
+            result = verifier.CheckTautology(" a ");
+            Assert.AreEqual(result, false);
+
+            result = verifier.CheckTautology(" a & b");
+            Assert.AreEqual(result, false);
+
+            result = verifier.CheckTautology("a & (b | c)");
+            Assert.AreEqual(result, false);
+
+            result = verifier.CheckTautology("!a & !b");
+            Assert.AreEqual(result, false);
+
+            result = verifier.CheckTautology("(!a | (b & !a))");
+            Assert.AreEqual(result, false);
+
+            result = verifier.CheckTautology(" a & !a");
+            Assert.AreEqual(result, false);
+
+
+
+            result = verifier.CheckTautology("( (a & (!b | b)) | (!a & (!b | b)) )");
+            Assert.AreEqual(result, true);
+
+            result = verifier.CheckTautology("(!a | (a & a))");
+            Assert.AreEqual(result, true);
+
+            result = verifier.CheckTautology("(!a | a)");
+            Assert.AreEqual(result, true);
+
+            result = verifier.CheckTautology("(!a | (a & !a))");
+            Assert.AreEqual(result, false);
+
+            //Extra conditions
+            result = verifier.CheckTautology("( !(a & a) | (a | !a))");
             Assert.AreEqual(result, true);
 
 

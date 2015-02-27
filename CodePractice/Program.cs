@@ -29,8 +29,7 @@ namespace CodePractice
     class Program
     {
         static void Main(string[] args)
-        {            
-            Dijkstra.Implementation();
+        {
 
             //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
 

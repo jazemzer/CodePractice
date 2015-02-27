@@ -1,3 +1,15 @@
+I found some more time after first submission to implement one of the enhancement idea which I had suggested in my previous mail which is 
+"Evaluating without execution" 
+
+I am achieving this by constructing a composite tree and applying some basic rules at each level. I've not made teh rules exhaustive but enough to 
+demonstrate the idea and cover the basic test cases. 
+
+All other deductions could be implemented in the same way.
+
+Assumption:
+	'!' operator doesnt work on complex operands.. eg., !(a|b). Reason : Felt its time consuming to implement and its just logic extension.
+
+***************************************************************
 A glimpse into my thought process:
 Since the word 'Tautology' was alien to me, I spent time reading about 'Propositional Calculus', 'Tautology','Contradiction','Contingency' chiefly from 
 this website http://www.zweigmedia.com/RealWorld/logic/logic1.html

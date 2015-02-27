@@ -50,12 +50,14 @@
     <Compile Include="Design\SkyCast\Contracts\IUpDownCostCalculator.cs" />
     <Compile Include="Design\SkyCast\Contracts\IBinarySearchHelper.cs" />
     <Compile Include="Design\SkyCast\MasterBrain.cs" />
+    <Compile Include="Design\Tautology\BruteForcePropositionalEngine.cs" />
     <Compile Include="Design\Tautology\ExpressionConvertor.cs" />
     <Compile Include="Design\Tautology\Contracts\IExpressionConvertor.cs" />
     <Compile Include="Design\Tautology\ExpressionEvaluator.cs" />
     <Compile Include="Design\Tautology\Contracts\IExpressionEvaluator.cs" />
     <Compile Include="Design\Tautology\Contracts\IPropositionalEngine.cs" />
-    <Compile Include="Design\Tautology\PropositionalEngine.cs" />
+    <Compile Include="Design\Tautology\Model\PositionalStatement.cs" />
+    <Compile Include="Design\Tautology\OptimizedPropositionalEngine.cs" />
     <Compile Include="Trees\BinaryTree\BinaryTreeZigZagLevelOrder.cs" />
     <Compile Include="Trees\BalancedBST\CreateBalancedBSTfromSortedArray.cs" />
     <Compile Include="Trees\BinaryTree\CreateBinaryTreeFromSortedArray.cs" />
@@ -234,6 +236,7 @@
     <None Include="Design\SkyCast\Skycast_Coding Challenge.pdf" />
     <None Include="Design\Tautology\Tautologyverifier.pdf" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

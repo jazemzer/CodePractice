@@ -6,22 +6,23 @@ using System.Text;
 
 namespace CodePractice.Design.Tautology
 {
-    public class PropositionalEngine : IPropositionalEngine 
+        public class BruteForcePropositionalEngine : IPropositionalEngine 
     {
         private IExpressionConvertor convertor;
         private IExpressionEvaluator evaluator;
 
         //Will be replaced with DI 
-        public PropositionalEngine(): this(new ExpressionConvertor(), new ExpressionEvaluator())
+        public BruteForcePropositionalEngine(): this(new ExpressionConvertor(), new ExpressionEvaluator())
         {
 
         }
 
-        public  PropositionalEngine(IExpressionConvertor convertor, IExpressionEvaluator evaluator)
+        public BruteForcePropositionalEngine(IExpressionConvertor convertor, IExpressionEvaluator evaluator)
         {
             this.convertor = convertor;
             this.evaluator = evaluator;
         }
+
 
         public bool CheckTautology(string positionalStatement)
         {
@@ -80,8 +81,5 @@ namespace CodePractice.Design.Tautology
             return result;
         }
 
-        
-
-        
     }
 }
