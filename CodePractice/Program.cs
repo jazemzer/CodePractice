@@ -21,7 +21,8 @@ using Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;  
+using System.Text;
+using System.Text.RegularExpressions;  
 
 namespace CodePractice
 {
@@ -30,6 +31,12 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
+            string input = "((!a & !c) | !(b&c))";
+
+            
+
+            //input = "(!a&c)";
+            var res = new EBNFConvertor().ConvertInfixToPostFix(input);
 
             //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
 

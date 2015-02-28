@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodePractice.Design.Tautology
 {
-    public class ExpressionConvertor : IExpressionConvertor
+    public class ShuntingYardConvertor : IExpressionConvertor
     {
         public string ConvertInfixToPostFix(string inFixNotation)
         {

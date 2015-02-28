@@ -8,9 +8,9 @@ namespace CodePractice.Tests.Design
     public class TautologyTests
     {
         [TestMethod]
-        public void Test_PostFix_Conversion()
+        public void Test_Shunt_Yard_PostFix_Conversion()
         {
-            var convertor = new ExpressionConvertor();
+            var convertor = new ShuntingYardConvertor();
             string result;
 
             result = convertor.ConvertInfixToPostFix("!a&b");
@@ -181,6 +181,49 @@ namespace CodePractice.Tests.Design
             //Extra conditions
             result = verifier.CheckTautology("( !(a & a) | (a | !a))");
             Assert.AreEqual(result, true);
+
+
+        }
+
+        [TestMethod]
+        public void Test_EBNF_PostFix_Conversion()
+        {
+            var convertor = new EBNFConvertor();
+            string result;
+
+            result = convertor.ConvertInfixToPostFix("!a&b");
+            Assert.AreEqual(result, "a!b&");
+
+            result = convertor.ConvertInfixToPostFix(" a ");
+            Assert.AreEqual(result, "a");
+
+            result = convertor.ConvertInfixToPostFix(" a & b");
+            Assert.AreEqual(result, "ab&");
+
+            result = convertor.ConvertInfixToPostFix("a & (b | c)");
+            Assert.AreEqual(result, "abc|&");
+
+            result = convertor.ConvertInfixToPostFix("!a & !b");
+            Assert.AreEqual(result, "a!b!&");
+
+            result = convertor.ConvertInfixToPostFix(" a & !a");
+            Assert.AreEqual(result, "aa!&");
+
+            result = convertor.ConvertInfixToPostFix("( (a & (!b | b)) | (!a & (!b | b)) )");
+            Assert.AreEqual(result, "ab!b|&a!b!b|&|");
+
+            result = convertor.ConvertInfixToPostFix("(!a | (a & a))");
+            Assert.AreEqual(result, "a!aa&|");
+
+            result = convertor.ConvertInfixToPostFix("(!a | (b & !a))");
+            Assert.AreEqual(result, "a!ba!&|");
+
+            result = convertor.ConvertInfixToPostFix("(!a | a)");
+            Assert.AreEqual(result, "a!a|");
+
+            //Extra conditions
+            result = convertor.ConvertInfixToPostFix("(!a | !(a& a))");
+            Assert.AreEqual(result, "a!aa&!|");
 
 
         }

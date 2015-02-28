@@ -12,7 +12,7 @@ namespace CodePractice.Design.Tautology
         private IExpressionEvaluator evaluator;
 
         //Will be replaced with DI 
-        public BruteForcePropositionalEngine(): this(new ExpressionConvertor(), new ExpressionEvaluator())
+        public BruteForcePropositionalEngine(): this(new ShuntingYardConvertor(), new ExpressionEvaluator())
         {
 
         }

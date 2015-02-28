@@ -13,7 +13,7 @@ namespace CodePractice.Design.Tautology
 
         //Will be replaced with DI 
         public OptimizedPropositionalEngine()
-            : this(new ExpressionConvertor())
+            : this(new ShuntingYardConvertor())
         {
 
         }
