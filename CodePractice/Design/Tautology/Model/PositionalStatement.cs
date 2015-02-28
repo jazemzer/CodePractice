@@ -23,7 +23,8 @@ namespace CodePractice.Design.Tautology.Model
             {
                 return Left.ToString() + Operator + Right.ToString();
             }
-            return IsNegated ? "!" + PositionalVariable.ToString() : PositionalVariable.ToString();
+            //return IsNegated ? "!" + PositionalVariable.ToString() : PositionalVariable.ToString();
+            return PositionalVariable.ToString();
         }
 
         public void CopyFrom(IPositionalStatement statement)

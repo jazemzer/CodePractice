@@ -25,8 +25,6 @@ namespace CodePractice.Design.Tautology
             this.convertor = convertor;
         }
 
-
-
         public bool CheckTautology(string positionalStatement)
         {
             var postFixNotation = convertor.ConvertInfixToPostFix(positionalStatement);
@@ -59,9 +57,13 @@ namespace CodePractice.Design.Tautology
                 case '&':
                     {
                         //Example: a & a , !a & !a
-                        if (left.ToString() == right.ToString())
+                        if (left.ToString() == right.ToString() && left.IsNegated == right.IsNegated)
                         {
                             statement = left;
+                        }
+                        else if (left.ToString() == right.ToString() && left.IsNegated != right.IsNegated)
+                        {
+                            statement = new PositionalStatement() { PositionalVariable = '0' };
                         }
                         else if (right.PositionalVariable == '1')       // a & True
                         {

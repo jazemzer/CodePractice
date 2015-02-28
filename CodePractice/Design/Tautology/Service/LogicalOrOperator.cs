@@ -18,10 +18,10 @@ namespace CodePractice.Design.Tautology.Service
            var right = statement.Right;
 
            // b | b , !b | !b
-           var bothSidesAlike = (left.PositionalVariable == right.PositionalVariable && left.IsNegated == right.IsNegated);
+           var bothSidesAlike = (left.ToString() == right.ToString() && left.IsNegated == right.IsNegated);
 
            // !b | b, b | !b
-           var sidesComplementing = (left.PositionalVariable == right.PositionalVariable && left.IsNegated != right.IsNegated);
+           var sidesComplementing = (left.ToString() == right.ToString() && left.IsNegated != right.IsNegated);
 
            // a | False 
            var rightSideFalsed = right.PositionalVariable == Constants.PositionalFalse;
