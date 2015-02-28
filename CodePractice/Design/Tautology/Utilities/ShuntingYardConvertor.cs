@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CodePractice.Design.Tautology
+namespace CodePractice.Design.Tautology.Utilities
 {
     public class ShuntingYardConvertor : IExpressionConvertor
     {

@@ -46,7 +46,7 @@ namespace CodePractice.Design.Tautology.Utilities
             input = null;
         }
 
-        /// <internalonly/>
+        //For backward compatibility
         Object IEnumerator.Current
         {
             get

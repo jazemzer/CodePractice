@@ -1,4 +1,6 @@
 ﻿using CodePractice.Design.Tautology.Contracts;
+using CodePractice.Design.Tautology.Service;
+using CodePractice.Design.Tautology.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

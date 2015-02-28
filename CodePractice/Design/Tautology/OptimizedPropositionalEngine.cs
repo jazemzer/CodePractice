@@ -1,5 +1,7 @@
 ﻿using CodePractice.Design.Tautology.Contracts;
 using CodePractice.Design.Tautology.Model;
+using CodePractice.Design.Tautology.Service;
+using CodePractice.Design.Tautology.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,17 +29,13 @@ namespace CodePractice.Design.Tautology
 
         public bool CheckTautology(string positionalStatement)
         {
-            //Brute force way
-            //return CheckTautology_BruteForce(positionalStatement);
-
-            //Optimized way
             var postFixNotation = convertor.ConvertInfixToPostFix(positionalStatement);
             var statementTree = ConstructParserTree(postFixNotation);
             RecursiveDescent(ref statementTree);
             return statementTree.PositionalVariable == '1' ? true : false;
         }
 
-        private void RecursiveDescent(ref PositionalStatement statement)
+        private void RecursiveDescent(ref IPositionalStatement statement)
         {
             //End condition
             if (statement.Operator == '\0')
@@ -118,7 +116,7 @@ namespace CodePractice.Design.Tautology
 
         }
 
-        private PositionalStatement ConstructParserTree(string postFixNotation)
+        private IPositionalStatement ConstructParserTree(string postFixNotation)
         {
             var temp = new Stack<PositionalStatement>();
             PositionalStatement operand = null;

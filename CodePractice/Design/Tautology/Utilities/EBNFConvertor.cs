@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CodePractice.Design.Tautology
+namespace CodePractice.Design.Tautology.Utilities
 {
     /// <summary>
-    /// Expression      = Binary
-    /// Binary          = Unary ("|"|"&") Unary 
-    /// Unary           = ("!") Primary 
-    /// Primary         = Variable | "(" Expression ")" 
+    /// The syntax used can be summarized in EBNF as below
+    ///         Expression      = Binary
+    ///         Binary          = Unary ("|"|"&") Unary 
+    ///         Unary           = ("!") Primary 
+    ///         Primary         = Variable | "(" Expression ")" 
     /// </summary>
     public class EBNFConvertor : IExpressionConvertor
     {

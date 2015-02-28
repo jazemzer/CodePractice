@@ -31,12 +31,11 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            string input = "((!a & !c) | !(b&c))";
+            string input = "(a | !(b&c))";
 
-            
+            var result = new RefactoredPropositionalEngine().CheckTautology(input);
 
             //input = "(!a&c)";
-            var res = new EBNFConvertor().ConvertInfixToPostFix(input);
 
             //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
 
