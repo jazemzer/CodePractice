@@ -3,6 +3,7 @@ using CodePractice.Design.Tautology.Model;
 using CodePractice.Design.Tautology.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
@@ -12,7 +13,7 @@ namespace CodePractice.Design.Tautology.Service
     {
        public void AttemptToSimplify(IPositionalStatement statement)
        {
-           //Have Replaced nested condition with guard classes
+           Contract.Requires(statement != null, "Positional Statement cannot be null");
 
            var left = statement.Left;
            var right = statement.Right;
@@ -40,7 +41,7 @@ namespace CodePractice.Design.Tautology.Service
                statement.CopyFrom(left);
 
            if (sidesComplementing || anySideTrued)
-               statement.CopyFrom(new PositionalStatement() { PositionalVariable = Constants.PositionalTrue });
+               statement.CopyFrom(new PositionalStatement() { PositionalVariable = Constants.PositionalTrue, IsNegated = statement.IsNegated });
 
            if (leftSideFalsed)
                statement.CopyFrom(right);

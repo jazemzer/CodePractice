@@ -275,7 +275,23 @@ namespace CodePractice.Tests.Design
             result = verifier.CheckTautology("( !(a & a) | (a | !a))");
             Assert.AreEqual(result, true);
 
+            result = verifier.CheckTautology("( !(a & b) | (a & b))");
+            Assert.AreEqual(result, true);
 
+            result = verifier.CheckTautology("( !(a & ((b & (a | !a))| c)) | (a & (b|c)))");
+            Assert.AreEqual(result, true);
+
+            result = verifier.CheckTautology("( !(a & !(a))");
+            Assert.AreEqual(result, true);
+
+            result = verifier.CheckTautology("!(a & !a)");
+            Assert.AreEqual(result, true);
+
+            result = verifier.CheckTautology("( !(a & !(!b)) | (a & b))");
+            Assert.AreEqual(result, true);
+
+            result = verifier.CheckTautology("( !a | (a & !(b & !b)))");
+            Assert.AreEqual(result, true);
         }
 
 

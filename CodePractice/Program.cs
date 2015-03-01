@@ -33,6 +33,7 @@ namespace CodePractice
         {
             string input = "(a | !(b&c))";
 
+
             var result = new RefactoredPropositionalEngine().CheckTautology(input);
 
             //input = "(!a&c)";

@@ -14,8 +14,6 @@ namespace CodePractice.Design.Tautology.Contracts
         char PositionalVariable { get; set; }
         char Operator { get; set; }
 
-        string ReducedEquivalent { get; set; }
-
         void CopyFrom(IPositionalStatement from);
     }
 }

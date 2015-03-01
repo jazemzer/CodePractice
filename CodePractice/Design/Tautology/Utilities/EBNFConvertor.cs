@@ -2,6 +2,7 @@
 using CodePractice.Design.Tautology.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,10 +21,11 @@ namespace CodePractice.Design.Tautology.Utilities
 
         public string ConvertInfixToPostFix(string inFix)
         {
+            Contract.Requires(inFix != null, "Infix notation cannot be null");
             
             //string syntax = @"([a-z]+|[A-Z]+|[!|&()])";
             //var tokens = Regex.Matches(input, syntax, RegexOptions.Compiled)
-            //    .Cast<Match>().Select(t => t.Groups[1].Value).GetEnumerator;
+            //    .Cast<Match>().Select(t => t.Groups[1].Value).GetEnumerator();
 
             //Could have used Regex to remove unwanted characters, but chose string Replace for simplicity
             inFix = (inFix.Replace(" ", string.Empty));

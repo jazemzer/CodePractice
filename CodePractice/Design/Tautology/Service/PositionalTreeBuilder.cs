@@ -3,6 +3,7 @@ using CodePractice.Design.Tautology.Model;
 using CodePractice.Design.Tautology.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
@@ -51,7 +52,7 @@ namespace CodePractice.Design.Tautology.Service
         private void NotBuilder()
         {
             var operand = storage.Pop();
-            operand.IsNegated = true;
+            operand.IsNegated = !operand.IsNegated;
             storage.Push(operand);
         }
 
@@ -67,6 +68,8 @@ namespace CodePractice.Design.Tautology.Service
 
         public IPositionalStatement ConstructTreeFrom(string postFixNotation)
         {
+            Contract.Requires(!string.IsNullOrEmpty(postFixNotation), "Postfix notation cannot be null/empty");
+
             storage = new Stack<PositionalStatement>();
             tokenEnumerator = postFixNotation.GetEnumerator();
 

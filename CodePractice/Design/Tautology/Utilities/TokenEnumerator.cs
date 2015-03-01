@@ -15,7 +15,7 @@ namespace CodePractice.Design.Tautology.Utilities
 
         internal TokenEnumerator(String input)
         {
-            Contract.Requires(input != null);
+            Contract.Requires(input != null, "Input string cannot be null" );
             this.input = input;
             this.index = -1;
         }

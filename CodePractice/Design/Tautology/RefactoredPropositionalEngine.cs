@@ -4,6 +4,7 @@ using CodePractice.Design.Tautology.Service;
 using CodePractice.Design.Tautology.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 
@@ -27,7 +28,7 @@ namespace CodePractice.Design.Tautology
             this.treeBuilder = treeBuilder;
 
             //  This could be moved to Factory implementation when needed. 
-            //  We could have also had Object Types and used Activator.CreateInstance with reflection
+            //  We could have also had Object Types as Dictionary Values and used Activator.CreateInstance with reflection
             solvers = new Dictionary<char, ITautologyOperator>();
             solvers.Add(Constants.LogicalAnd, new LogicalAndOperator());
             solvers.Add(Constants.LogicalOr, new LogicalOrOperator());
@@ -36,14 +37,18 @@ namespace CodePractice.Design.Tautology
 
         public bool CheckTautology(string positionalStatement)
         {
+            Contract.Requires(!string.IsNullOrEmpty(positionalStatement), "Positional Statement cannot be null");
+
             var postFixNotation = convertor.ConvertInfixToPostFix(positionalStatement);
             var statementTree = treeBuilder.ConstructTreeFrom(postFixNotation);
             RecursiveDescent(statementTree);
-            return statementTree.PositionalVariable == Constants.PositionalTrue ? true : false;
+            return statementTree.PositionalVariable == Constants.PositionalTrue  ? true : false;
         }
 
         private void RecursiveDescent(IPositionalStatement statement)
         {
+            Contract.Requires(statement != null, "Positional Statement cannot be null");
+
             //End condition
             if (statement.Operator == Constants.DefaultToken)
                 return;
@@ -57,9 +62,21 @@ namespace CodePractice.Design.Tautology
             if (right != null)
                 RecursiveDescent(right);
 
-            // ContainsKey check is absent as the problem assumes synctactic validity
+            SolveStatement(statement);
+        }
+
+        private void SolveStatement(IPositionalStatement statement)
+        {
+            Contract.Requires(solvers.ContainsKey(statement.Operator), "Unknown Operator " + statement.Operator);
+
             solvers[statement.Operator].AttemptToSimplify(statement);
 
+            //Common conditions to flip switches, !True or !False
+            if (statement.PositionalVariable == Constants.PositionalTrue && statement.IsNegated)
+                statement.PositionalVariable = Constants.PositionalFalse;
+
+            if(statement.PositionalVariable == Constants.PositionalFalse && statement.IsNegated)
+                statement.PositionalVariable = Constants.PositionalTrue;
         }
 
         
