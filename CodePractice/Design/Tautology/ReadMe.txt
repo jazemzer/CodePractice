@@ -1,3 +1,47 @@
+In the previous submission, my mindset was that of solving online coding challenges where the chief goal is solving for time complexity. 
+That is why, you would have seen the BruteForce implementation - which evaluates all 2^n combinations (n - number of vocabulary variables) followed
+by OptimizedEngine - which evaluates without executiong. And both of them using ShuntingYard postfix algorithm implemented using primitive if-else/switch statements.
+
+It wasn't that I was unaware of the evils of switch but I had preconceived idea (solving for time complexity) about approaching the problem and the lines 'coding challenge', 
+'hand coded parsing and evaluation logic without the use of ScriptEngine or its equivalents', 'clean, simple, elegant' misguided me. 
+I probably saw what my mind wanted me to see :) 
+And that made me solve chiefly for time complexity, though I left comments over switch statements suggesting possible redesign.
+
+Solution being rejected on grounds of nesting/library non-usage, I have refactored it. In addition to code refactoring, I've made the following changes
+	*	Instead of Shunting-Yard algorithm, I'm introducing more efficient EBNF approach which is solved using recursive descent. 		
+		 The syntax used can be summarized in EBNF as below
+				 Expression      = Binary
+				 Binary          = Unary ("|"|"&") Unary 
+				 Unary           = ("!") Primary 
+				 Primary         = Variable | "(" Expression ")" 
+
+	*	I've handled extra conditions which I had previously omitted 
+
+	        "( !(a & a) | (a | !a))"
+
+            "( !(a & b) | (a & b))"
+
+            "( !(a & ((b & (a | !a))| c)) | (a & (b|c)))"
+
+            "( !(a & !(a))"
+
+            "!(a & !a)"
+
+            "( !(a & !(!b)) | (a & b))"
+
+            "( !a | (a & !(b & !b)))"
+	
+These changes can be tracked from RefactoredPropositionalEngine.cs. I've also left the old code in place in case you wanted to refer (BruteForce/Optimized)PropositionalEngine
+
+If there is anything that could be bettered, I would like to discuss and learn. Thanks for your time.
+
+
+
+
+
+***************************************************************
+Notes from previuos submission:
+***************************************************************
 I found some more time after first submission to implement one of the enhancement idea which I had suggested in my previous mail which is 
 "Evaluating without execution" 
 

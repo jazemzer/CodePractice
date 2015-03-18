@@ -39,6 +39,27 @@ namespace CodePractice.GeeksForGeeks
             Console.WriteLine(IsBST(root, int.MinValue, int.MaxValue));
         }
 
+
+        //private static Tuple<bool, int, int> IsBstCustom(Node node)
+        //{
+        //    if (node == null)
+        //    {
+        //        return new Tuple<bool, int, int>(true, int.MinValue, int.MinValue);
+        //    }
+        //    var left = IsBstCustom(node.Left);
+        //    var right = IsBstCustom(node.Right);
+
+        //    //Failed scenarios
+
+        //    if(!left.Item1 || !right.Item1 ||
+        //        left.Item3 > node.Data || right.Item2 < node.Data)
+        //    {
+        //        return new Tuple<bool, int, int>(false, int.MinValue, int.MinValue); //Min and Max doesnt matter
+        //    }
+
+        //    return new Tuple<bool, int, int>(true, left.Item1, right.Item2);
+        //}
+
         private static bool IsBST(Node node, int min, int max)
         {
             if (node == null)

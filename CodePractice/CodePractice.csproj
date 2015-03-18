@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arrays\CountContinuousSubArrayWithZeroSum.cs" />
     <Compile Include="Arrays\_FindIndexOf_SmallestNumber_GreaterThanOrEqual_To_K.cs" />
     <Compile Include="Arrays\_FindSubArrayWithGivenSum.cs" />
     <Compile Include="Design\SkyCast\BinarySearchHelper.cs" />
@@ -155,6 +156,9 @@
     <Compile Include="Design\FlightBooking\FlightFilter.cs" />
     <Compile Include="DynamicProgramming\KnapSack.cs" />
     <Compile Include="BitManipulation\ComputeParity.cs" />
+    <Compile Include="Trees\BinaryTree\PrintAllRootToLeafPaths.cs" />
+    <Compile Include="Trees\BinaryTree\SumOfAllLeftLeaves.cs" />
+    <Compile Include="Trees\BinaryTree\SwapNodes_HackerRank.cs" />
     <Compile Include="Trees\BST\CreateBSTFromSortedDoublyLinkedList.cs" />
     <Compile Include="Trees\BST\CreateBSTFromSortedLinkedList.cs" />
     <Compile Include="Trees\BinaryTree\BinaryTreeTraversalWithoutRecursion.cs" />
@@ -234,6 +238,7 @@
     <Compile Include="StringManipulation\ReplaceAndRemove.cs" />
     <Compile Include="StringManipulation\ReverseWordsInSentence.cs" />
     <Compile Include="StringManipulation\_RemovePatterns.cs" />
+    <Compile Include="Trees\BST\WidthOfBinaryTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeEval\Data\LongestLines.txt" />
@@ -241,6 +246,7 @@
     <Content Include="HackerRank\TC\GemStones1.txt" />
     <Content Include="HackerRank\TC\Insertion.txt" />
     <Content Include="HackerRank\TC\ManasaAndStones1.txt" />
+    <Content Include="Input.txt" />
     <Content Include="Notes.txt" />
   </ItemGroup>
   <ItemGroup>

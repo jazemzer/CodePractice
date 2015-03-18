@@ -76,12 +76,12 @@ namespace CodePractice.Design.Tautology.Utilities
 
         private void ParseLogical()
         {
-            ParseBinary(ParseNegation, '&', '|');
+            ParseBinary(ParseNegation, Constants.LogicalAnd, Constants.LogicalOr);
         }
 
         private void ParseNegation()
         {
-            ParseUnary(ParsePrimary, '!');
+            ParseUnary(ParsePrimary, Constants.UnaryNot);
         }
         
 

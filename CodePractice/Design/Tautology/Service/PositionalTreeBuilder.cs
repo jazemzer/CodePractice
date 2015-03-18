@@ -11,10 +11,11 @@ namespace CodePractice.Design.Tautology.Service
 {
     public class PositionalTreeBuilder : IPositionalTreeBuilder
     {
+        //I'm choosing data sharing using class variables, but if the logic grows beyond simple methods, they'll have to be polymorphed into classes 
         private Stack<PositionalStatement> storage;
+        private CharEnumerator tokenEnumerator;
      
         private Dictionary<char, Action> builders;
-        private CharEnumerator tokenEnumerator;
 
         public PositionalTreeBuilder()
         {

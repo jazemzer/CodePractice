@@ -15,11 +15,14 @@ using CodePractice.GeeksForGeeks.BinarySearchTree;
 using CodePractice.GeeksForGeeks.BinaryTree;
 using CodePractice.LinkedList;
 using CodePractice.StringManipulation;
+using CodePractice.Trees.BinaryTree;
+using CodePractice.Trees.BST;
 using CSharp.Threading;
 using DSArrays;
 using Logic;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;  
@@ -31,19 +34,14 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            string input = "(a | !(b&c))";
+            Console.SetIn(new StreamReader(@"D:\Works\CodePractice\CodePractice\Input.txt"));
 
+            WidthOfBinaryTree.Implementation();
 
-            var result = new RefactoredPropositionalEngine().CheckTautology(input);
-
-            //input = "(!a&c)";
-
-            //CodePractice.StringManipulation.PhoneMnemonics.Implementation();
-
-            //Yet to solve - http://basicalgos.blogspot.in/2012/06/58-linked-list-related-questions.html
-
-            //Theory
-            // http://www.geeksforgeeks.org/linked-list-vs-array/
+            Console.Read();
         }
+
+       
+
     }
 }
