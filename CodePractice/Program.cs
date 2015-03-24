@@ -36,10 +36,42 @@ namespace CodePractice
         {
             Console.SetIn(new StreamReader(@"D:\Works\CodePractice\CodePractice\Input.txt"));
 
-            WidthOfBinaryTree.Implementation();
+            MirrorATree.Implementation();
+
+            return;
+            var N = Convert.ToInt32(Console.ReadLine());
+
+            var markers = new bool[N];
+
+            var primes = 0;
+
+            markers[0] = true;
+            for (int i = 1; i < N; i++)
+            {
+                if (!markers[i])
+                {
+                    int temp = 2;
+                    int num = i;
+                    while ( (num = (i + 1) * temp) <= N)
+                    {
+                        markers[num - 1] = true;
+                        temp++;
+                    }
+                }
+            }
+
+
+            for (int i = 0; i < N; i++)
+            {
+                if (!markers[i])
+                    primes++;
+            }
+
+            Console.WriteLine(primes);
 
             Console.Read();
         }
+
 
        
 

@@ -70,6 +70,7 @@
     <Compile Include="Design\Tautology\Utilities\Constants.cs" />
     <Compile Include="Design\Tautology\Utilities\StringExtensions.cs" />
     <Compile Include="Design\Tautology\Utilities\TokenEnumerator.cs" />
+    <Compile Include="Trees\BinaryTree\AreTreesIdentical.cs" />
     <Compile Include="Trees\BinaryTree\BinaryTreeZigZagLevelOrder.cs" />
     <Compile Include="Trees\BalancedBST\CreateBalancedBSTfromSortedArray.cs" />
     <Compile Include="Trees\BinaryTree\CreateBinaryTreeFromSortedArray.cs" />
@@ -157,6 +158,7 @@
     <Compile Include="DynamicProgramming\KnapSack.cs" />
     <Compile Include="BitManipulation\ComputeParity.cs" />
     <Compile Include="Trees\BinaryTree\PrintAllRootToLeafPaths.cs" />
+    <Compile Include="Trees\BinaryTree\SizeOfBinaryTree.cs" />
     <Compile Include="Trees\BinaryTree\SumOfAllLeftLeaves.cs" />
     <Compile Include="Trees\BinaryTree\SwapNodes_HackerRank.cs" />
     <Compile Include="Trees\BST\CreateBSTFromSortedDoublyLinkedList.cs" />
@@ -170,6 +172,8 @@
     <Compile Include="Trees\BinaryTree\PrintRightViewOfBinaryTree.cs" />
     <Compile Include="Trees\BinaryTree\ReverseLevelOrder.cs" />
     <Compile Include="Trees\BinaryTree\SerializeAndDeserializeABinaryTree.cs" />
+    <Compile Include="Trees\BST\InsertSearchAndDeletion.cs" />
+    <Compile Include="Trees\BinaryTree\MirrorATree.cs" />
     <Compile Include="Trees\BST\SerializeAndDeserializeABSTWithoutRecursion.cs" />
     <Compile Include="Trees\BST\SerializeAndDeserializeABST.cs" />
     <Compile Include="Trees\BinaryTree\_VerticalOrderTraversal.cs" />
@@ -238,7 +242,7 @@
     <Compile Include="StringManipulation\ReplaceAndRemove.cs" />
     <Compile Include="StringManipulation\ReverseWordsInSentence.cs" />
     <Compile Include="StringManipulation\_RemovePatterns.cs" />
-    <Compile Include="Trees\BST\WidthOfBinaryTree.cs" />
+    <Compile Include="Trees\BinaryTree\WidthOfBinaryTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeEval\Data\LongestLines.txt" />

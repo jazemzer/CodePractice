@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CodePractice.Trees.BST
+namespace CodePractice.Trees.BinaryTree
 {
+    //http://www.geeksforgeeks.org/diameter-of-a-binary-tree/
     class WidthOfBinaryTree
     {
 
