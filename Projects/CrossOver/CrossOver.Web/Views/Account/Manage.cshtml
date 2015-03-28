@@ -1,0 +1,38 @@
+﻿@model CrossOver.Web.Models.LocalPasswordModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+    <h3>@ViewBag.Title.</h3>
+
+<p class="message-success">@ViewBag.StatusMessage</p>
+
+<p>You're logged in as <strong>@User.Identity.Name</strong>.</p>
+
+<div class="row">
+    <div class="col-md-6">
+        @if (ViewBag.HasLocalPassword)
+        {
+            @Html.Partial("_ChangePasswordPartial")
+        }
+        else
+        {
+            @Html.Partial("_SetPasswordPartial")
+        }
+    </div>
+    <div class="col-md-6">
+        <section id="externalLogins">
+            @Html.Action("RemoveExternalLogins")
+
+            <h3>Add an external login</h3>
+            @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyCast", "SkyCast\SkyCast.csproj", "{FFCD45D4-CA07-4775-905B-F5A78E0DB5F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyCast.Contracts", "SkyCast.Contracts\SkyCast.Contracts.csproj", "{6672B990-B7C4-4D9E-A817-EBECE41A951B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyCast.DependencyInjection", "SkyCast.DependencyInjection\SkyCast.DependencyInjection.csproj", "{065F576E-8EA8-4291-9AE0-5256E119B19C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyCast.UnitTests", "SkyCast.UnitTests\SkyCast.UnitTests.csproj", "{1E0CEDB9-B1B1-48F1-A0C8-9D1F4914B4FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyCast.Models", "SkyCast.Models\SkyCast.Models.csproj", "{EAA80895-5C09-4246-A03D-3146865B4570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkyCast.Services", "SkyCast.Services\SkyCast.Services.csproj", "{691C4E09-FDD6-4737-B790-81DEC0C014CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFCD45D4-CA07-4775-905B-F5A78E0DB5F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFCD45D4-CA07-4775-905B-F5A78E0DB5F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFCD45D4-CA07-4775-905B-F5A78E0DB5F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFCD45D4-CA07-4775-905B-F5A78E0DB5F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6672B990-B7C4-4D9E-A817-EBECE41A951B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6672B990-B7C4-4D9E-A817-EBECE41A951B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6672B990-B7C4-4D9E-A817-EBECE41A951B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6672B990-B7C4-4D9E-A817-EBECE41A951B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{065F576E-8EA8-4291-9AE0-5256E119B19C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065F576E-8EA8-4291-9AE0-5256E119B19C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065F576E-8EA8-4291-9AE0-5256E119B19C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065F576E-8EA8-4291-9AE0-5256E119B19C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E0CEDB9-B1B1-48F1-A0C8-9D1F4914B4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0CEDB9-B1B1-48F1-A0C8-9D1F4914B4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0CEDB9-B1B1-48F1-A0C8-9D1F4914B4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0CEDB9-B1B1-48F1-A0C8-9D1F4914B4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA80895-5C09-4246-A03D-3146865B4570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA80895-5C09-4246-A03D-3146865B4570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA80895-5C09-4246-A03D-3146865B4570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA80895-5C09-4246-A03D-3146865B4570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691C4E09-FDD6-4737-B790-81DEC0C014CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691C4E09-FDD6-4737-B790-81DEC0C014CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691C4E09-FDD6-4737-B790-81DEC0C014CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691C4E09-FDD6-4737-B790-81DEC0C014CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
