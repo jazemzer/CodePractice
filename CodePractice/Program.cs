@@ -36,7 +36,7 @@ namespace CodePractice
         {
             Console.SetIn(new StreamReader(@"D:\Works\CodePractice\CodePractice\Input.txt"));
 
-            MirrorATree.Implementation();
+            IncreasingOrderSubArray.Implementation();
 
             return;
             var N = Convert.ToInt32(Console.ReadLine());

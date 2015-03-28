@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays\CountContinuousSubArrayWithZeroSum.cs" />
+    <Compile Include="Arrays\FindTwoNumbersThatSumToK.cs" />
+    <Compile Include="Arrays\IncreasingOrderSubArray.cs" />
     <Compile Include="Arrays\_FindIndexOf_SmallestNumber_GreaterThanOrEqual_To_K.cs" />
     <Compile Include="Arrays\_FindSubArrayWithGivenSum.cs" />
     <Compile Include="Design\SkyCast\BinarySearchHelper.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Design\Tautology\Utilities\Constants.cs" />
     <Compile Include="Design\Tautology\Utilities\StringExtensions.cs" />
     <Compile Include="Design\Tautology\Utilities\TokenEnumerator.cs" />
+    <Compile Include="StringManipulation\GroupAnagrams.cs" />
     <Compile Include="Trees\BinaryTree\AreTreesIdentical.cs" />
     <Compile Include="Trees\BinaryTree\BinaryTreeZigZagLevelOrder.cs" />
     <Compile Include="Trees\BalancedBST\CreateBalancedBSTfromSortedArray.cs" />
@@ -172,6 +175,7 @@
     <Compile Include="Trees\BinaryTree\PrintRightViewOfBinaryTree.cs" />
     <Compile Include="Trees\BinaryTree\ReverseLevelOrder.cs" />
     <Compile Include="Trees\BinaryTree\SerializeAndDeserializeABinaryTree.cs" />
+    <Compile Include="Trees\BST\InOrderSuccessor.cs" />
     <Compile Include="Trees\BST\InsertSearchAndDeletion.cs" />
     <Compile Include="Trees\BinaryTree\MirrorATree.cs" />
     <Compile Include="Trees\BST\SerializeAndDeserializeABSTWithoutRecursion.cs" />

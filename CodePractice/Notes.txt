@@ -75,3 +75,33 @@ Determine if a string can be segmented into valid dictionary words.
 Implement regular expression matching.
 Implement boggle game.
 Implement LRU cache.
+
+  //int N = Convert.ToInt32(Console.ReadLine());
+
+            int N = 123456789;
+
+            int i = 1;
+            while (true)
+            {
+                int temp = i;
+                int index = 0;
+
+                double sum = 0;
+                while (temp > 0)
+                {
+                    if ((temp & 1) == 1)
+                    {
+                        sum = sum + (Math.Pow(10, index));
+                    }
+                    temp = temp >> 1;
+                    index++;
+                }
+
+                if (sum % N == 0)
+                {
+                    Console.WriteLine(sum);
+                    break;
+                }
+
+                i++;
+            }
