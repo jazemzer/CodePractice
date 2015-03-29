@@ -115,6 +115,7 @@ namespace CrossOver.Web.Controllers
                 if (articleToUpdate != null)
                 {
                     articleToUpdate.Title = newsarticle.Title;
+                    articleToUpdate.ImageTile = newsarticle.ImageTile;
                     articleToUpdate.PublishedOn = DateTime.Now;
                     articleToUpdate.FormattedContent = newsarticle.FormattedContent;
                     articleToUpdate.CategoryId = newsarticle.CategoryId;

@@ -32,3 +32,11 @@ a.logoff {
   color: #333333;
 }
 
+
+.imageTile{
+    height: 200px; width: 100%; display: block;
+}
+
+.newsSummary{
+    max-height: 165px; overflow:hidden; text-overflow:ellipsis;
+}
