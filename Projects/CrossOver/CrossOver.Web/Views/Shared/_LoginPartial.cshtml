@@ -7,12 +7,12 @@
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
-                <li><a role="menuitem" href="@Url.Action("Manage","Account")">Manage</a></li>
+                <li><a role="menuitem" href="@Url.Action("Manage","Account")">Manage Profile</a></li>
                 <li >
                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"}))
                     {
                         @Html.AntiForgeryToken()
-                        <a class="margin20p" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                        <a class="margin20p logoff" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                     }
                 </li>
               </ul>

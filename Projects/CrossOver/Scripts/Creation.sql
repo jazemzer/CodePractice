@@ -40,19 +40,21 @@ CREATE TABLE [crossover].NewsCategory (
 END
 GO
 
+
+
 IF  NOT EXISTS (SELECT * FROM sys.objects 
 WHERE object_id = OBJECT_ID(N'[crossover].[NewsArticle]') AND type in (N'U'))
 BEGIN
 CREATE TABLE [crossover].NewsArticle (    
 	[ArticleId] [uniqueidentifier] primary key NOT NULL,
-	[Title] [nvarchar](50) NOT NULL,
-	[OriginalContent] [nvarchar](max) NOT NULL,
+	[Title] [nvarchar](200) NOT NULL,	
+	ImageTile nvarchar(200) null,
 	[FormattedContent] [nvarchar](max) NOT NULL,
 	[CategoryId] [int] NOT NULL,
 	[PublishedOn] [datetime] not null,
 	[WrittenBy] [int] not null,
-	foreign key (CategoryId) references [crossover].NewsCategory(CategoryId),
-	foreign key (WrittenBy) references UserProfile(UserId),
+	Constraint FK_NewsCategory foreign key (CategoryId) references [crossover].NewsCategory(CategoryId),
+	Constraint FK_UserProfile foreign key (WrittenBy) references UserProfile(UserId),
 )
 
 END
@@ -60,7 +62,8 @@ GO
 
 
 
-
+--alter table crossover.Newsarticle
+--Add ImageTile nvarchar(200) null
 
 --Test data
 
@@ -72,3 +75,4 @@ GO
 --insert into CrossOver.newsCategory values(6, 'Business')
 --insert into CrossOver.newsCategory values(7, 'Travel')
 --insert into CrossOver.newsCategory values(8, 'LifeStyle')
+

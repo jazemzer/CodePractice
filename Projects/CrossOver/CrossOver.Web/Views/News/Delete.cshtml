@@ -1,0 +1,38 @@
+﻿@model CrossOver.Models.NewsArticle
+
+@{
+    ViewBag.Title = "Delete News Article";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>@ViewBag.NewsCategory.CategoryName | @Html.DisplayFor(model => model.Title)</legend>
+
+   
+  
+   
+    <div class="display-field">
+        @Html.Raw(Model.FormattedContent)
+    </div>
+
+    <div class="display-field">
+        <b>Author : </b> @ViewBag.Author
+        <br />
+        <b>Published Date : </b> @Html.DisplayFor(model => model.PublishedOn)
+    </div>
+   
+  
+    
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+
+        </div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

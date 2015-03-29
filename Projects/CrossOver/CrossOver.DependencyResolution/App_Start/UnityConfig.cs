@@ -3,6 +3,8 @@ using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using CrossOver.Contracts.Repositories;
 using CrossOver.Repositories;
+using CrossOver.Contracts.Services;
+using CrossOver.Services;
 
 namespace CrossOver.DependencyResolution.App_Start
 {
@@ -38,6 +40,9 @@ namespace CrossOver.DependencyResolution.App_Start
             // container.LoadConfiguration();
 
             container.RegisterType<IUserRepository, UserRepository>();
+            container.RegisterType<INewsRepository, NewsRepository>();
+            container.RegisterType<INewsService, NewsService>();
+            container.RegisterType<IUserService, UserService>();
         }
     }
 }

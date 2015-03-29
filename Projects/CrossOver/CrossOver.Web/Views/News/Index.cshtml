@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CrossOver.Models.NewsArticle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    
+    <h2 class="pull-left">Latest Stories</h2>
+
+    <div class="pull-right">
+        @Html.ActionLink("Create New Article", "Create", null, new {@class ="btn btn-primary margin20p"})
+    </div>
+
+<div class="clear-fix clearfix"></div>
+
+
+<div class="row">
+@foreach (var item in Model)
+
+{ 
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="http://ichef.bbci.co.uk/news/625/media/images/81947000/jpg/_81947552_992cc258-b5a2-4ab3-8bcc-4be889073d34.jpg" 
+                 alt="100%x200" style="height: 200px; width: 100%; display: block;" 
+                 data-holder-rendered="true">
+            <div class="caption">
+                <h3 >@Html.DisplayFor(modelItem => item.Title)
+                    
+                <small>@Html.DisplayFor(modelItem => item.NewsCategory.CategoryName)</small></h3>
+                <small>@Html.DisplayFor(modelItem => item.PublishedOn)</small>
+                <p class="pull-right">
+                    -@Html.DisplayFor(modelItem => item.UserProfile.UserName)
+                </p>
+                <p class="clearfix"></p>
+
+                <div style="max-height: 200px; overflow:hidden; text-overflow:ellipsis; ">
+                    @Html.Raw(item.FormattedContent)
+                </div>
+                   
+                    <p>
+                        @Html.ActionLink("Read", "Details", new { id = item.ArticleId }, new { @class = "btn btn-default" }) .
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ArticleId }, new { @class = "btn btn-warning" }) .
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ArticleId }, new { @class = "btn btn-danger" })
+                    </p>
+                </div>
+        </div>
+    </div>
+}
+</div>
+

@@ -39,8 +39,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="NewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrossOver.Contracts\CrossOver.Contracts.csproj">
+      <Project>{0f4aa839-8443-4a7e-b4d0-f24a472f876d}</Project>
+      <Name>CrossOver.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrossOver.Models\CrossOver.Models.csproj">
+      <Project>{b5ace767-e55a-4e60-9843-71d8570f5d1f}</Project>
+      <Name>CrossOver.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrossOver.Repositories\CrossOver.Repositories.csproj">
+      <Project>{1359157f-e797-4423-8501-5fa02c59b90f}</Project>
+      <Name>CrossOver.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrossOver.Utilities\CrossOver.Utilities.csproj">
+      <Project>{4c9321c1-6a11-41c9-b0ea-5b38f6e07eb1}</Project>
+      <Name>CrossOver.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

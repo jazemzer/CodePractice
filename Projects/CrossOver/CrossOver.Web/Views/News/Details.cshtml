@@ -1,0 +1,31 @@
+﻿@model CrossOver.Models.NewsArticle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>@ViewBag.NewsCategory.CategoryName | @Html.DisplayFor(model => model.Title)</legend>
+
+
+
+
+    <div class="display-field">
+        @Html.Raw(Model.FormattedContent)
+    </div>
+
+    <div class="display-field">
+        <b>Author : </b> @ViewBag.Author
+        <br />
+        <b>Published Date : </b> @Html.DisplayFor(model => model.PublishedOn)
+    </div>
+
+
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ArticleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

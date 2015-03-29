@@ -18,6 +18,14 @@ namespace CrossOver.Repositories
             }
         }
 
+        public IUserProfile SearchUserBy(int userId)
+        {
+            using (var db = new CrossOverContext())
+            {
+                return db.UserProfiles.FirstOrDefault(u => u.UserId == userId);
+            }
+        }
+
         public bool CreateUser(string userName)
         {
             var user = new UserProfile() { UserName = userName };
