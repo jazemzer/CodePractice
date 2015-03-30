@@ -54,6 +54,7 @@ namespace CrossOver.Web.Controllers
         //
         // GET: /News/Create
 
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.NewsCategories = new SelectList(_newsService.GetAllNewsCategories(), "CategoryId", "CategoryName", 1);
@@ -65,6 +66,7 @@ namespace CrossOver.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(NewsArticle newsarticle)
         {
             if (ModelState.IsValid)
@@ -89,6 +91,7 @@ namespace CrossOver.Web.Controllers
         //
         // GET: /News/Edit/5
 
+        [Authorize]
         public ActionResult Edit(Guid id)
         {
             var newsarticle = _newsService.FindArticle(id);
@@ -106,6 +109,7 @@ namespace CrossOver.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit(NewsArticle newsarticle)
         {
             if (ModelState.IsValid)
@@ -133,6 +137,7 @@ namespace CrossOver.Web.Controllers
         //
         // GET: /News/Delete/5
 
+        [Authorize]
         public ActionResult Delete(Guid id)
         {
             var newsarticle = _newsService.FindArticle(id);
@@ -151,10 +156,10 @@ namespace CrossOver.Web.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            var articleToDelete = _newsService.FindArticle(id);
-            _newsService.DeleteArticle(articleToDelete);
+            _newsService.DeleteArticle(id);
 
             return RedirectToAction("Index");
         }

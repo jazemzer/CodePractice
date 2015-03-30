@@ -14,7 +14,7 @@ namespace CrossOver.Contracts.Repositories
         INewsArticle FetchArticle(Guid articleId);
         bool SaveArticle(INewsArticle newsArticle);
         bool UpdateArticle(INewsArticle newsArticle);
-        bool DeleteArticle(INewsArticle newsArticle);
+        bool DeleteArticle(Guid articleId);
 
         IEnumerable<INewsCategory> FetchAllNewsCategories();
     }

@@ -64,7 +64,7 @@ namespace CrossOver.Web.Controllers
         {
             WebSecurity.Logout();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "News");
         }
 
         //
@@ -91,7 +91,7 @@ namespace CrossOver.Web.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "News");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -342,7 +342,7 @@ namespace CrossOver.Web.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "News");
             }
         }
 

@@ -8,7 +8,7 @@ namespace CrossOver.Contracts.Services
 {
     public interface INewsService
     {
-        bool DeleteArticle(INewsArticle newsArticle);
+        bool DeleteArticle(Guid articleId);
         INewsArticle FindArticle(Guid articleId);
         IEnumerable<INewsArticle> GetLatestArticles();
         IEnumerable<INewsArticle> GetLatestArticles(string category);

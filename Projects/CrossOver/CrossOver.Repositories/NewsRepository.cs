@@ -59,11 +59,12 @@ namespace CrossOver.Repositories
         }
 
 
-        public bool DeleteArticle(INewsArticle newsArticle)
+        public bool DeleteArticle(Guid articleId)
         {
             using (var db = new CrossOverContext())
             {
-                db.NewsArticles.Remove(newsArticle as NewsArticle);
+                var tobeDeleted = db.NewsArticles.Find(articleId);
+                db.NewsArticles.Remove(tobeDeleted);
                 db.SaveChanges();
             }
             return true;

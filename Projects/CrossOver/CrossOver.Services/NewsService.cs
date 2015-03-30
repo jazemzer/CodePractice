@@ -50,9 +50,9 @@ namespace CrossOver.Services
         }
 
 
-        public bool DeleteArticle(INewsArticle newsArticle)
+        public bool DeleteArticle(Guid articleId)
         {
-            return _newsRepository.DeleteArticle(newsArticle);
+            return _newsRepository.DeleteArticle(articleId);
         }
 
 
