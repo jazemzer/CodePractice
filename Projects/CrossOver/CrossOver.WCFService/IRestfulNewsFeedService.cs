@@ -17,7 +17,7 @@ namespace CrossOver.WCFService
     {
 
         [OperationContract]
-        [WebGet(UriTemplate = "category/{newsCategory}",ResponseFormat=WebMessageFormat.Json )]
+        [WebGet(UriTemplate = "news/rest/category/{newsCategory}",ResponseFormat=WebMessageFormat.Json )]
         List<NewsFeed> GetNews(string newsCategory); 
 
     }

@@ -10,13 +10,14 @@ using System.Text;
 namespace CrossOver.WCFService
 {
     [ServiceContract]
+    [ServiceKnownType(typeof(Atom10FeedFormatter))]
     [ServiceKnownType(typeof(Rss20FeedFormatter))]
     public interface IRssNewsFeedService
     {
 
         [OperationContract]
-        [WebGet(UriTemplate = "rss?category={newsCategory}", BodyStyle = WebMessageBodyStyle.Bare)]
-        SyndicationFeedFormatter GetNews(string newsCategory); 
+        [WebGet(UriTemplate = "news/rss?category={category}")]
+        SyndicationFeedFormatter GetNews(string category); 
 
     }
 }

@@ -4,8 +4,6 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <fieldset>
     <legend>@ViewBag.NewsCategory.CategoryName | @Html.DisplayFor(model => model.Title)</legend>
 
@@ -15,7 +13,7 @@
     <div class="display-field">
         @Html.Raw(Model.FormattedContent)
     </div>
-
+    <hr />
     <div class="display-field">
         <b>Author : </b> @ViewBag.Author
         <br />
@@ -25,7 +23,10 @@
 
 
 </fieldset>
+<br />
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ArticleId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }, new { @class = "btn btn-warning btn-sm" })
+    <br />
+    <br />
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -31,14 +31,14 @@ namespace CrossOver.WCFService
             _userService = userService;
         }
 
-        public SyndicationFeedFormatter GetNews(string newsCategory)
+        public SyndicationFeedFormatter GetNews(string category)
         {
-            SyndicationFeed feed = new SyndicationFeed("Latest News", "This is Cross Over news feed", new Uri("http://jabezeliezer.me"));
+            SyndicationFeed feed = new SyndicationFeed("CrossOver News", "This is Cross Over news feed", new Uri("http://jabezeliezer.me"));
             feed.Authors.Add(new SyndicationPerson("jabezeliezer.m@gmail.com"));
             feed.Categories.Add(new SyndicationCategory("News Articles"));
             feed.Description = new TextSyndicationContent("This is just a sample to demonstrate how to expose a feed using RSS with WCF");
 
-            var result =_newsService.GetLatestArticles(newsCategory);
+            var result =_newsService.GetLatestArticles(category);
 
             if (result != null)
             {
@@ -46,7 +46,7 @@ namespace CrossOver.WCFService
 
                 foreach (var article in result)
                 {
-                    var item = new SyndicationItem(article.Title, article.FormattedContent, new System.Uri("http://localhost/news/details/" + article.ArticleId), article.ArticleId.ToString(), article.PublishedOn);
+                    var item = new SyndicationItem(article.Title, article.FormattedContent, new System.Uri("http://localhost:64031/news/details/" + article.ArticleId), article.ArticleId.ToString(), article.PublishedOn);
                     items.Add(item);
                 }
                 feed.Items = items;
