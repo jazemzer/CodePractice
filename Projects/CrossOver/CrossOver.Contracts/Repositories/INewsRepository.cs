@@ -9,6 +9,8 @@ namespace CrossOver.Contracts.Repositories
     public interface INewsRepository
     {
         IEnumerable<INewsArticle> GetLatestArticles();
+        IEnumerable<INewsArticle> GetLatestArticles(int categoryId);
+
         INewsArticle FetchArticle(Guid articleId);
         bool SaveArticle(INewsArticle newsArticle);
         bool UpdateArticle(INewsArticle newsArticle);

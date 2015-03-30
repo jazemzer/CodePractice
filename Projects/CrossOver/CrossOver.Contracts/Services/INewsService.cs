@@ -11,6 +11,7 @@ namespace CrossOver.Contracts.Services
         bool DeleteArticle(INewsArticle newsArticle);
         INewsArticle FindArticle(Guid articleId);
         IEnumerable<INewsArticle> GetLatestArticles();
+        IEnumerable<INewsArticle> GetLatestArticles(string category);
         bool SaveArticle(INewsArticle newsArticle);
         bool UpdateArticle(INewsArticle newsArticle);
         IEnumerable<INewsCategory> GetAllNewsCategories();

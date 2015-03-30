@@ -60,19 +60,3 @@ CREATE TABLE [crossover].NewsArticle (
 END
 GO
 
-
-
---alter table crossover.Newsarticle
---Add ImageTile nvarchar(200) null
-
---Test data
-
---insert into CrossOver.newsCategory values(1, 'Sports')
---insert into CrossOver.newsCategory values(2, 'Entertainment')
---insert into CrossOver.newsCategory values(3, 'Health')
---insert into CrossOver.newsCategory values(4, 'World')
---insert into CrossOver.newsCategory values(5, 'Science')
---insert into CrossOver.newsCategory values(6, 'Business')
---insert into CrossOver.newsCategory values(7, 'Travel')
---insert into CrossOver.newsCategory values(8, 'LifeStyle')
-

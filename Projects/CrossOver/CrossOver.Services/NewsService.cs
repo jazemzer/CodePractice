@@ -17,6 +17,17 @@ namespace CrossOver.Services
             this._newsRepository = newsRepository;
         }
 
+        public IEnumerable<INewsArticle> GetLatestArticles(string category)
+        {
+            var categoryDetails = _newsRepository.FetchAllNewsCategories().Where(x => string.Compare(x.CategoryName, category, StringComparison.OrdinalIgnoreCase) == 0).FirstOrDefault();
+
+            if(categoryDetails != null)
+            {
+                return _newsRepository.GetLatestArticles(categoryDetails.CategoryId);
+            }
+            return null;
+        }
+
         public IEnumerable<INewsArticle> GetLatestArticles()
         {
             return _newsRepository.GetLatestArticles();

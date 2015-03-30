@@ -20,6 +20,14 @@ namespace CrossOver.Repositories
             }
         }
 
+        public IEnumerable<INewsArticle> GetLatestArticles(int categoryId)
+        {
+            using (var db = new CrossOverContext())
+            {
+                return db.NewsArticles.Where(x => x.CategoryId == categoryId).OrderByDescending(n => n.PublishedOn).Take(10).ToList();
+            }
+        }
+
 
         public INewsArticle FetchArticle(Guid articleId)
         {
