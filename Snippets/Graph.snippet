@@ -1,0 +1,136 @@
+﻿<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2008/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>
+                Graph - Sample Implementation
+            </Title>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[
+        public static void Implementation()
+        {
+            var graph = new Graph<int>();
+            for (int i = 0; i < 4; i++)
+            {
+                graph.AddNode(i);
+            }
+
+            graph.AddDirectedEdge(0, 1, 1);
+            graph.AddDirectedEdge(0, 2, 1);
+            graph.AddDirectedEdge(1, 2, 1);
+            graph.AddDirectedEdge(2, 0, 1);
+            graph.AddDirectedEdge(2, 3, 1);
+            graph.AddDirectedEdge(3, 3, 1);
+
+
+        }
+
+        internal class Graph<T> 
+        {
+            private NodeList<T> nodeSet = new NodeList<T>();
+            public NodeList<T> Nodes
+            {
+                get { return nodeSet; }
+            }
+
+            public void AddNode(T value)
+            {
+                nodeSet.Add(new GraphNode<T>(value));
+            }
+
+            public void AddDirectedEdge(T from, T to, int cost)
+            {
+                var u = nodeSet.FindByValue(from);
+                var v = nodeSet.FindByValue(to);
+
+                u.Neighbours.Add(v);
+                u.Costs.Add( cost);
+            }
+
+            public void AddDirectedEdge(GraphNode<T> from, GraphNode<T> to, int cost)
+            {
+                from.Neighbours.Add(to);
+                from.Costs.Add(cost);
+            }
+
+            public void AddUndirectedEdge(GraphNode<T> from, GraphNode<T> to, int cost)
+            {
+                from.Neighbours.Add(to);
+                from.Costs.Add(cost);
+
+                to.Neighbours.Add(from);
+                to.Costs.Add(cost);
+            }
+
+        }
+
+        internal class GraphNode<T>
+        {
+            public GraphNode() { }
+            public GraphNode(T data) : this(data, null) { }
+            public GraphNode(T data, NodeList<T> neighbours)
+            {
+                this.data = data;
+                this.neighbours = neighbours;
+            }
+
+            private T data;
+            public T Value
+            {
+                get
+                {
+                    return data;
+                }
+                set
+                {
+                    data = value;
+                }
+            }
+
+            private NodeList<T> neighbours = null;
+            public NodeList<T> Neighbours
+            {
+                get
+                {
+                    if (neighbours == null)
+                        return new NodeList<T>();
+                    return neighbours;
+                }
+                set
+                {
+                    neighbours = value;
+                }
+            }
+
+            private List<int> costs;
+            public List<int> Costs
+            {
+                get
+                {
+                    if (costs == null)
+                        costs = new List<int>();
+
+                    return costs;
+                }
+            }
+
+        }
+
+        internal class NodeList<T> : Collection<GraphNode<T>>
+        {
+            public GraphNode<T> FindByValue(T value)
+            {
+                foreach (GraphNode<T> node in Items)
+                    if (node.Value.Equals(value))
+                        return node;
+
+                return null;
+            }
+        }
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

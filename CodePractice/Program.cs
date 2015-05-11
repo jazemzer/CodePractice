@@ -13,6 +13,7 @@ using CodePractice.DesignPatterns;
 using CodePractice.GeeksForGeeks;
 using CodePractice.GeeksForGeeks.BinarySearchTree;
 using CodePractice.GeeksForGeeks.BinaryTree;
+using CodePractice.Graph;
 using CodePractice.LinkedList;
 using CodePractice.StringManipulation;
 using CodePractice.Trees.BinaryTree;
@@ -36,7 +37,7 @@ namespace CodePractice
         {
             Console.SetIn(new StreamReader(@"D:\Works\CodePractice\CodePractice\Input.txt"));
 
-            IncreasingOrderSubArray.Implementation();
+            DetectCycleInGraph.Implementation();
 
             return;
             var N = Convert.ToInt32(Console.ReadLine());

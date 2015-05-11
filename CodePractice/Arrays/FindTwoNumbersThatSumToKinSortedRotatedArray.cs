@@ -6,13 +6,13 @@ using System.Text;
 namespace CodePractice.Arrays
 {
 
-    //http://www.geeksforgeeks.org/write-a-c-program-that-given-a-set-a-of-n-numbers-and-another-number-x-determines-whether-or-not-there-exist-two-elements-in-s-whose-sum-is-exactly-x/
-    class FindTwoNumbersThatSumToK
+    //http://www.geeksforgeeks.org/given-a-sorted-and-rotated-array-find-if-there-is-a-pair-with-a-given-sum/
+    class FindTwoNumbersThatSumToKinSortedRotatedArray
     {
         public static void Implementation()
         {
-            var input = new int[] { -1, -2, -2, 0, 4, 5, 3 };
-            var K = 3;
+            var input = new int[] {11, 15, 6, 8, 9, 10};
+            var K = 16;
 
             UsingHashMap(input, K);
             UsingPointers(input, K);
@@ -21,24 +21,39 @@ namespace CodePractice.Arrays
 
         static void UsingPointers(int[] input, int K)
         {
-            Array.Sort(input);
+            //Find left pointer
+            var temp = input[0];
+            var left = 0;
 
-            int left = 0;
-            int right = input.Length - 1;
+            var N = input.Length;
 
-            while(left < right)
+            for (int i = 1; i < N; i++)
             {
-                var temp = input[left] + input[right];
+                if (input[i] < temp)
+                {
+                    temp = input[i];
+                    left = i;
+                    break;
+                }
+            }
+
+            //Special condition. array rotated by n
+            int right = left == 0 ? N - 1 : left - 1;
+
+            while(left != right)
+            {
+                temp = input[left] + input[right];
                 if (temp == K)
                 {
                     Console.WriteLine(input[left] + "," + input[right]);
-                    left++;
-                    right--;
+                    left = (left + 1) % N;
+                    right = (right - 1 + N) % N;
                 }
                 else if (temp < K)
-                    left++;
+                    left = (left + 1) %N;
                 else
-                    right--;
+                    right = (right - 1 + N) %N;
+
             }
         }
 

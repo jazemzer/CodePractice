@@ -15,9 +15,9 @@ namespace DSArrays
     public class FindDuplicateNumbers
     {
 
-        public static void Code()
+        public static void Implementation()
         {
-            var input = new int[] { 0,0 };
+            var input = new int[] { 2, 2, 3, 1, 0, 3};
 
             var result = FindDuplicates(input).ToList();
             foreach (var findDuplicate in result)

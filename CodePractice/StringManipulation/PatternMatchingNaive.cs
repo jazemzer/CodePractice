@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CodePractice.StringManipulation
 {
-    class PatternMatching
+    class PatternMatchingNaive
     {
 
         public static void Implementation()

@@ -44,10 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays\CountContinuousSubArrayWithZeroSum.cs" />
+    <Compile Include="Arrays\DutchFlagProblem.cs" />
+    <Compile Include="Arrays\FindTwoNumbersThatSumToKinSortedRotatedArray.cs" />
     <Compile Include="Arrays\FindTwoNumbersThatSumToK.cs" />
     <Compile Include="Arrays\IncreasingOrderSubArray.cs" />
+    <Compile Include="Arrays\LongestIncreasingSubSequence.cs" />
     <Compile Include="Arrays\_FindIndexOf_SmallestNumber_GreaterThanOrEqual_To_K.cs" />
     <Compile Include="Arrays\_FindSubArrayWithGivenSum.cs" />
+    <Compile Include="DatastructuresAndAlgorithms\Algorithms\LinkedList\LeastRecentlyUsedCache.cs" />
     <Compile Include="Design\SkyCast\BinarySearchHelper.cs" />
     <Compile Include="Design\SkyCast\UpDownCostCalculator.cs" />
     <Compile Include="Design\SkyCast\Contracts\IUpDownCostCalculator.cs" />
@@ -72,7 +76,13 @@
     <Compile Include="Design\Tautology\Utilities\Constants.cs" />
     <Compile Include="Design\Tautology\Utilities\StringExtensions.cs" />
     <Compile Include="Design\Tautology\Utilities\TokenEnumerator.cs" />
+    <Compile Include="Graph\DetectCycleInGraph.cs" />
+    <Compile Include="Graph\GraphTraversal.cs" />
+    <Compile Include="Graph\ShortestPathToStrangerInFriendCircle.cs" />
     <Compile Include="StringManipulation\GroupAnagrams.cs" />
+    <Compile Include="StringManipulation\PatternMatchingKMP.cs" />
+    <Compile Include="StringManipulation\PatternMatchingRipper.cs" />
+    <Compile Include="StringManipulation\SearchInputStreamInDictionary.cs" />
     <Compile Include="Trees\BinaryTree\AreTreesIdentical.cs" />
     <Compile Include="Trees\BinaryTree\BinaryTreeZigZagLevelOrder.cs" />
     <Compile Include="Trees\BalancedBST\CreateBalancedBSTfromSortedArray.cs" />
@@ -240,7 +250,7 @@
     <Compile Include="StringManipulation\CheckPalindrome.cs" />
     <Compile Include="StringManipulation\EncodeAString.cs" />
     <Compile Include="StringManipulation\InterConversion.cs" />
-    <Compile Include="StringManipulation\PatternMatching.cs" />
+    <Compile Include="StringManipulation\PatternMatchingNaive.cs" />
     <Compile Include="StringManipulation\PhoneMnemonics.cs" />
     <Compile Include="StringManipulation\RemoveDuplicateCharacters.cs" />
     <Compile Include="StringManipulation\ReplaceAndRemove.cs" />
