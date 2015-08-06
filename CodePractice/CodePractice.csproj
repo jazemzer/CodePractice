@@ -49,8 +49,8 @@
     <Compile Include="Arrays\FindTwoNumbersThatSumToK.cs" />
     <Compile Include="Arrays\IncreasingOrderSubArray.cs" />
     <Compile Include="Arrays\LongestIncreasingSubSequence.cs" />
+    <Compile Include="Arrays\WaysToDecodeMessage.cs" />
     <Compile Include="Arrays\_FindIndexOf_SmallestNumber_GreaterThanOrEqual_To_K.cs" />
-    <Compile Include="Arrays\_FindSubArrayWithGivenSum.cs" />
     <Compile Include="DatastructuresAndAlgorithms\Algorithms\LinkedList\LeastRecentlyUsedCache.cs" />
     <Compile Include="Design\SkyCast\BinarySearchHelper.cs" />
     <Compile Include="Design\SkyCast\UpDownCostCalculator.cs" />
@@ -188,6 +188,7 @@
     <Compile Include="Trees\BST\InOrderSuccessor.cs" />
     <Compile Include="Trees\BST\InsertSearchAndDeletion.cs" />
     <Compile Include="Trees\BinaryTree\MirrorATree.cs" />
+    <Compile Include="Trees\BST\PrintPreOrderWithLeafNodes.cs" />
     <Compile Include="Trees\BST\SerializeAndDeserializeABSTWithoutRecursion.cs" />
     <Compile Include="Trees\BST\SerializeAndDeserializeABST.cs" />
     <Compile Include="Trees\BinaryTree\_VerticalOrderTraversal.cs" />

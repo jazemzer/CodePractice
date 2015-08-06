@@ -5,6 +5,9 @@ using System.Text;
 
 namespace CodePractice.Arrays
 {
+    /// <summary>
+    /// http://www.geeksforgeeks.org/find-subarray-with-given-sum/
+    /// </summary>
     class PrintSubArrayWithGivenSum
     {
 
@@ -16,7 +19,7 @@ namespace CodePractice.Arrays
                 
         private static void Code(int[] a, int k)
         {
-            // represents <sum fromstart uptpthat index, index> 
+            // represents <sum from start upto index, index> 
             var hashMap = new Dictionary<int, int>();
             hashMap.Add(0, -1);
 
@@ -29,7 +32,7 @@ namespace CodePractice.Arrays
                 if (hashMap.ContainsKey(currSum - k))
                 {
                     var index = hashMap[currSum - k];
-                    Console.WriteLine(" Sub array that sums upto {0} start from index {1} and ends at index {2}", k, index + 1, i);
+                    Console.WriteLine(" Sub array that sums to {0}, starts from index {1} and ends at index {2}", k, index + 1, i);
                     break;
                 }
                 if (!hashMap.ContainsKey(currSum))

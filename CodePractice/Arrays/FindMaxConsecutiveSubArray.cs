@@ -17,7 +17,7 @@ namespace CodePractice.DatastructuresAndAlgorithms.Problems.Arrays
             int maxSum = 0;
             int start = 0;
             int end = -1;
-            ;
+            
             for (int i = 0; i < input.Length; i++)
             {
                 tempSum += input[i];

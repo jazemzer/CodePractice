@@ -37,7 +37,7 @@ namespace CodePractice
         {
             Console.SetIn(new StreamReader(@"D:\Works\CodePractice\CodePractice\Input.txt"));
 
-            DetectCycleInGraph.Implementation();
+            WaysToDecodeMessage.Implementation();
 
             return;
             var N = Convert.ToInt32(Console.ReadLine());
