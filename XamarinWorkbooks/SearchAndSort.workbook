@@ -221,3 +221,64 @@ input = new int[]{-5,3,67,134,88,453543,99,32,23,5};
 MergeSort(input, 0, input.Length -1);
 Console.WriteLine(String.Join(",",input));
 ```
+
+Heap Sort
+
+```csharp
+void Swap(int[] input, int from, int to){
+	var temp = input[from];
+	input[from] = input[to];
+	input[to] = temp;
+}
+
+void Heapify(int[] input, int parent, int n){
+	var largest = parent;
+	// Left child = 2 * Parent + 1
+	// Right child = 2 * Parent + 2
+	var left = 2 * parent + 1; 
+	var right = 2 * parent + 2;
+	
+	if(left < n && input[left] > input[parent]){
+		largest = left;
+	}
+	if (right < n && input[right] > input[parent]){
+		largest = right;
+	}
+	
+	//If one of the child is larger, swap with parent
+	if( largest != parent){
+		Console.WriteLine("Largest " + input[largest] + " Parent " + input[parent]);
+		Swap(input, largest, parent);
+		
+		// Recursively heapify the affected sub-tree
+		Heapify(input, largest, n);
+		
+	}
+		
+		
+	
+}
+
+void HeapSort(int[] input, int n) {
+	// Start from the last Parent and keep moving up.
+	// Last Parent = N/2 - 1
+	// Every previous parent is one element before 
+	for(int i = (n-2)/2; i >=0; i--){
+		Heapify(input, i, n);
+	}
+	Console.WriteLine(String.Join(",",input));
+	
+	// Remove one element from top and move to end
+	// Re-heapify the smaller input set 
+	for(int i = n-1; i>=0; i--){
+		Swap(input, 0, i);
+				Console.WriteLine(String.Join(",",input));
+		Heapify(input, 0,i);
+		Console.WriteLine(String.Join(",",input));
+	}
+} 
+var input = new int[]{4,8,6,9,33,23,90,5,1};
+HeapSort(input, input.Length);
+//Console.WriteLine(String.Join(",",input));
+```
+

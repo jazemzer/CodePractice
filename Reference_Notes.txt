@@ -1,0 +1,4 @@
+Binary Heap = Complete Binary Tree
+Last Parent in a Binary Tree will be at N/2 -1
+
+http://bigocheatsheet.com/
