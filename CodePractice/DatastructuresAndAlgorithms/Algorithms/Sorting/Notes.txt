@@ -1,0 +1,14 @@
+Bubble sort - Sinking sort
+	Compare each adjacent elements 
+	Useful - when the list is already sorted 
+	Best - Avg - Worst
+	O(n) - O(n ^2) -O(n^2)	
+	Rabbits and Turtles - Because different elements move with different speed. 
+		Avoided by Cocktail shake sort 
+
+Insertion sort
+	Better than Bubble
+
+Selection sort
+	In-place comparison sort - avoids auxillary memory. 
+	Comparison is similar to Insertion

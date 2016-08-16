@@ -1,0 +1,223 @@
+---
+uti: com.xamarin.workbook
+platform: MacNet45
+packages: []
+---
+
+Binary Search - Linear
+
+```csharp
+int LinearBinarySearch(int[] input, int itemToSearch){
+	var itemIndex = -1;
+	var left = 0; 
+	var right = input.Length - 1;	
+	while(right >= left){		
+		int mid = (left + right)/2;
+		if(itemToSearch == input[mid]){			
+			itemIndex = mid;
+			break;
+		}
+		else if(itemToSearch < input[mid]){
+			right = mid - 1;
+		}
+		else {
+			left = mid + 1; 
+		}		
+	}			
+	return itemIndex;
+}
+
+Console.WriteLine(LinearBinarySearch(new int[]{0,1,2,3,4,5,6,7,8}, 1));
+Console.WriteLine(LinearBinarySearch(new int[]{0,1,2,3,4,5,6,7,8}, 8));
+Console.WriteLine(LinearBinarySearch(new int[]{0,1,2,3,4,5,6,7,8}, 18));
+Console.WriteLine(LinearBinarySearch(new int[]{0,1,2,3,4,5,6,7,8}, 4));
+```
+
+Binary Search - Recursive
+
+```csharp
+int RecursiveBinarySearch(int[] input, int left, int right, int itemToSearch){
+	if(right < left) {
+		return -1;
+	}
+	
+	int mid = (left + right)/2;
+	if(itemToSearch == input[mid]) {
+		return mid;
+	}
+	else if(itemToSearch < input[mid]) {
+		return RecursiveBinarySearch(input, left, mid - 1, itemToSearch);
+	}
+	else {
+		return RecursiveBinarySearch(input, mid + 1, right, itemToSearch);
+	}	
+}
+
+var input = new int[]{0,1,2,3,4,5,6,7,8};
+Console.WriteLine(RecursiveBinarySearch(input, 0, input.Length - 1, 1));
+Console.WriteLine(RecursiveBinarySearch(input, 0, input.Length - 1, 8));
+Console.WriteLine(RecursiveBinarySearch(input, 0, input.Length - 1, 19));
+Console.WriteLine(RecursiveBinarySearch(input, 0, input.Length - 1, 4));
+```
+
+Selection Sort
+
+```csharp
+int[] SelectionSort(int[] input){	
+	for(int i = 0; i < input.Length; i++){
+		var minIndex = i;
+		// From the current element search till the end
+		for(int j = i + 1; j < input.Length; j++){
+			if(input[j] < input[minIndex]){
+				minIndex = j;
+			}
+		}
+		
+		if(minIndex != i){			
+			Swap(input, i, minIndex);
+		}
+	}
+	return input;
+} 
+
+void Swap(int[] input, int from, int to){
+	var temp = input[from];
+	input[from] = input[to];
+	input[to] = temp;
+}
+
+Console.WriteLine(String.Join(",",SelectionSort(new int[]{4,8,3,4,0,6,8,9,2,5,81,7,9,6,9,33,23,90,5})));
+Console.WriteLine(String.Join(",",SelectionSort(new int[]{-5,3,67,134,88,453543,99,32,23,5})));
+```
+
+Bubble Sort
+
+```csharp
+int[] BubbleSort(int[] input){	
+	var swapExists = true;
+	while(swapExists){
+		swapExists = false;
+		int i = 0, j = 1;
+		while(j < input.Length) {
+			if(input[j] < input[i]){
+				swapExists = true;
+				Swap(input, i, j);
+			}
+			i++;
+			j++;
+		}
+	}
+	return input;
+} 
+
+int[] BubbleSortOptimized(int[] input){	
+	var swapExists = true;
+	for(int i = 0; i < input.Length; i++){
+		swapExists = false;
+		
+		for(int j = 1; j < input.Length - i; j++){
+			if(input[j] < input[j-1]){
+				swapExists = true;
+				Swap(input, j, j-1);
+			}
+		}		
+		if(!swapExists){
+			break;
+		}
+	}
+	return input;
+} 
+
+void Swap(int[] input, int from, int to){
+	var temp = input[from];
+	input[from] = input[to];
+	input[to] = temp;
+}
+
+Console.WriteLine(String.Join(",",BubbleSort(new int[]{4,8,3,4,0,6,8,9,2,5,81,7,9,6,9,33,23,90,5,1})));
+Console.WriteLine(String.Join(",",BubbleSort(new int[]{-5,3,67,134,88,453543,99,32,23,5})));
+
+Console.WriteLine(String.Join(",",BubbleSortOptimized(new int[]{4,8,3,4,0,6,8,9,2,5,81,7,9,6,9,33,23,90,5,1})));
+Console.WriteLine(String.Join(",",BubbleSortOptimized(new int[]{-5,3,67,134,88,453543,99,32,23,5})));
+```
+
+Insertion Sort
+
+```csharp
+int[] InsertionSort(int[] input){	
+	for(int i = 1; i < input.Length; i++){		
+		var currentItem = input[i];
+		var j = i -1;		
+		while(j >= 0 && currentItem < input[j]){
+			input[j+1] = input[j];			
+			j--;
+		}
+		input[j+1] = currentItem;
+	}
+	return input;
+} 
+
+Console.WriteLine(String.Join(",",InsertionSort(new int[]{4,8,6,9,33,23,90,5,1})));
+Console.WriteLine(String.Join(",",InsertionSort(new int[]{-5,3,67,134,88,453543,99,32,23,5})));
+```
+
+Merge Sort
+
+```csharp
+void MergeSort(int[] input, int left, int right){	
+	
+	if(left < right) {	// Important! 
+		int middle = (left + right) / 2;
+		MergeSort(input, left, middle);
+		MergeSort(input, middle+1, right);
+		
+		// Merge logic
+		var n1 = middle - left + 1;
+		var input1 = new int[n1];
+		for(int i = 0; i < n1; i++){
+			input1[i] = input[left + i];
+		}
+
+		var n2 = right - middle;
+		var input2 = new int[n2];
+		for(int i = 0; i < n2; i++){
+			input2[i] = input[middle + 1 + i];
+		}
+
+		int p1 = 0, p2 = 0;
+		var index = left;
+		while(p1 < n1 && p2 < n2){
+			if(input1[p1] <= input2[p2]){	//Remember the equalto sign
+				input[index] = input1[p1];
+				p1++;
+			}
+			else {
+				input[index] = input2[p2];
+				p2++;		
+			}
+			index++;
+		}
+
+		while(p1 < n1){
+			input[index] = input1[p1];
+			p1++;		
+			index++;
+		}
+
+		while(p2 < n2){
+			input[index] = input2[p2];
+			p2++;		
+			index++;
+		}
+	}	
+} 
+
+
+var input = new int[]{4,8,6,9,33,23,90,5,1};
+MergeSort(input, 0, input.Length -1);
+Console.WriteLine(String.Join(",",input));
+
+input = new int[]{-5,3,67,134,88,453543,99,32,23,5};
+MergeSort(input, 0, input.Length -1);
+Console.WriteLine(String.Join(",",input));
+```
