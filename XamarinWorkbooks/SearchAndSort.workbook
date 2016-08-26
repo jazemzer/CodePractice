@@ -282,3 +282,96 @@ HeapSort(input, input.Length);
 Console.WriteLine(String.Join(",",input));
 ```
 
+Quick Sort
+
+```csharp
+void QuickSort(int[] input, int left, int right){
+	//Base exit condition
+	if(left < right) {
+		int pivotIndex = Partition(input, left, right);
+		QuickSort(input, left, pivotIndex - 1);
+		QuickSort(input, pivotIndex + 1, right);
+	}
+	
+}
+
+int Partition(int[] input, int left, int right){
+	//Pick random pivot index
+	int pivotIndex = (right + left)/2;
+	int pivotValue = input[pivotIndex];
+	
+	//Move pivot to the end of the array
+	Swap(input, pivotIndex, right);
+	
+	//Reset pivot index to the left of the array
+	pivotIndex = left;
+	
+	for(int i = left; i < right; i++){
+		if(input[i] < pivotValue){
+			Swap(input, pivotIndex, i);
+			pivotIndex++;
+		}
+	}
+	
+	// Move pivot value back to the correct position
+	Swap(input, pivotIndex, right);
+	return pivotIndex;
+}
+	
+void Swap(int[] input, int from, int to){
+	var temp = input[from];
+	input[from] = input[to];
+	input[to] = temp;
+}
+
+
+var input = new int[]{4,8,6,9,33,23,90,5,1};
+QuickSort(input, 0, input.Length - 1);
+Console.WriteLine(String.Join(",",input)); 
+
+input = new int[]{-5,3,67,134,88,453543,99,32,23,5};
+QuickSort(input, 0, input.Length - 1);
+Console.WriteLine(String.Join(",",input));
+```
+
+Counting Sort
+
+```csharp
+int[] CountingSort(int[] input){
+	var min = 0;
+	var max = 0;
+	// Find min and max elements 
+	foreach(var i in input) {
+		if(i < min) min = i;
+		else if (i > max) max = i;
+	}
+	// Initialize count dictionary
+	int[] counts = new int[max - min + 1];
+	// Populate counts by offsetting for min value
+	foreach(var j in input){
+		counts[j-min]++;
+	}
+	
+	// Update to cumulative counts
+	for(int i = 1; i < counts.Length; i++){
+		counts[i] += counts[i-1];
+	}
+	
+	var output = new int[input.Length];
+	for(int i = 0; i < input.Length; i++){
+		var index = counts[input[i]-min];
+		output[index-1] = input[i];
+		counts[input[i]-min]--;
+	}
+	return output;
+}
+
+var input = new int[]{4,8,6,9,33,23,90,5,1};
+var output = CountingSort(input);
+Console.WriteLine(String.Join(",",output)); 
+
+input = new int[]{-5,3,67,134,88,145,99,32,23,5};
+output = CountingSort(input);
+Console.WriteLine(String.Join(",",output));
+```
+

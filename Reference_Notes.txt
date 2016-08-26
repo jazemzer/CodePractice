@@ -1,4 +1,13 @@
 Binary Heap = Complete Binary Tree
+
+Big-O - upper bound
+Omega - Lower bound
+Theta - both upper and lower bound
+
 Last Parent in a Binary Tree will be at N/2 -1
+First child of any node(i) in a Compelete Binary Tree represented in an array will be at i*2 + 1
 
 http://bigocheatsheet.com/
+
+3-way quick sort
+How to implement QuickSort for Linked Lists?
