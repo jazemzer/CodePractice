@@ -356,8 +356,9 @@ int[] CountingSort(int[] input){
 	for(int i = 1; i < counts.Length; i++){
 		counts[i] += counts[i-1];
 	}
-	
+
 	var output = new int[input.Length];
+	
 	for(int i = 0; i < input.Length; i++){
 		var index = counts[input[i]-min];
 		output[index-1] = input[i];
@@ -370,8 +371,71 @@ var input = new int[]{4,8,6,9,33,23,90,5,1};
 var output = CountingSort(input);
 Console.WriteLine(String.Join(",",output)); 
 
-input = new int[]{-5,3,67,134,88,145,99,32,23,5};
+input = new int[]{-5,-15,3,67,134,88,200,99,32,23,5};
 output = CountingSort(input);
+Console.WriteLine(String.Join(",",output));
+```
+
+BucketSort
+
+```csharp
+// Prerequisites 
+// 1. The elements should be uniformly distributed so that the Expected runtime of insertion sort will be O(n) 
+// 2. The Hash function used should ensure that elements in B[i] are less than B[j] given i < j
+
+float[] BucketSort(float[] input, int no_buckets) {
+	//Create buckets
+	LinkedList<float>[] buckets = new LinkedList<float>[no_buckets];
+	
+	// Create empty list within buckets	
+	for( int i =0; i < buckets.Length; i++) {		
+		buckets[i] = new LinkedList<float>();
+	}
+
+	foreach(var element in input){
+		var bucket_index = HashFunction(element, no_buckets);
+
+
+		var current_bucket = buckets[bucket_index];
+
+		var inserted = false;		
+		//Find the right location for the element in the bucket		
+		var current_element = current_bucket.First;
+		while(current_element != null){
+			//Find element greater than this
+			if(current_element.Value > element){
+				current_bucket.AddBefore(current_element, element);
+				inserted = true;
+				break;
+			}
+			current_element = current_element.Next;
+		}
+		if(!inserted){
+			current_bucket.AddLast(element);
+		}
+	}
+	
+	
+	var index = 0; 
+	// Writing to output
+	var output = new float[input.Length];
+	foreach(var bucket in buckets){
+		var cursor = bucket.First;
+		while(cursor != null){
+			output[index++] = cursor.Value;
+			cursor = cursor.Next;
+		}
+	}
+	return output;
+}
+
+// Converts  given input into one of the available buckets
+int HashFunction(float element, int no_buckets){
+	return (int) (no_buckets * element);
+}
+
+var input = new float[]{0.11f,0.21f,0.3f,0.5f,0.6f,0.7f,0.8f,0.99f,0.01f};
+var output = BucketSort(input, 10);
 Console.WriteLine(String.Join(",",output));
 ```
 
